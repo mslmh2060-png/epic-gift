@@ -6,24 +6,24 @@
 
   <title>Epic Gift</title>
 
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
 </head>
 
 <body>
 
-  <div class="app">
+  <main class="app">
 
     <!-- HEADER -->
     <header class="topbar">
 
-      <button class="close">✕</button>
+      <button class="top-button close" aria-label="Close">×</button>
 
       <div class="brand">
-        <div class="brand-icon">🎁</div>
+        <div class="brand-gift">🎁</div>
         <span>Epic Gift</span>
       </div>
 
-      <button class="menu">☰</button>
+      <button class="top-button menu" aria-label="Menu">☰</button>
 
     </header>
 
@@ -31,10 +31,13 @@
     <!-- BALANCE -->
     <section class="balance-section">
 
-      <div class="avatar">👤</div>
+      <div class="avatar">
+        <div class="avatar-head"></div>
+        <div class="avatar-body"></div>
+      </div>
 
       <div class="balance-info">
-        <small>Your balance</small>
+        <div class="balance-label">Your balance</div>
 
         <div class="balance-value">
           <span class="ton-icon">◆</span>
@@ -42,7 +45,9 @@
         </div>
       </div>
 
-      <button class="deposit">Deposit</button>
+      <button class="deposit">
+        Deposit
+      </button>
 
     </section>
 
@@ -52,15 +57,17 @@
 
       <div class="live-title">
         <span class="live-dot"></span>
-        <strong>Live</strong>
+        <span>Live</span>
       </div>
 
       <div class="live-cards">
+
         <div class="live-card">🎁</div>
         <div class="live-card">💎</div>
         <div class="live-card">🎟️</div>
         <div class="live-card">💜</div>
         <div class="live-card">🔥</div>
+
       </div>
 
     </section>
@@ -69,18 +76,24 @@
     <!-- ROCKET -->
     <section class="rocket-banner">
 
-      <div class="banner-text">
-        <span class="hot">HOT</span>
+      <div class="rocket-content">
+
+        <span class="hot-badge">HOT</span>
+
         <h2>Rocket</h2>
+
         <p>Fly higher & win more</p>
+
+        <div class="multipliers">
+          <span>1.2x</span>
+          <span>2x</span>
+          <span>5x</span>
+        </div>
+
       </div>
 
-      <div class="rocket-art">🚀</div>
-
-      <div class="multipliers">
-        <span>1.2x</span>
-        <span>2x</span>
-        <span>5x</span>
+      <div class="rocket-art">
+        🚀
       </div>
 
     </section>
@@ -89,26 +102,42 @@
     <!-- PVP -->
     <section class="pvp-banner">
 
-      <div class="pvp-title">
-        <span>⚔️</span>
+      <div class="pvp-heading">
+        <span class="swords">⚔️</span>
+
         <div>
-          <strong>PVP</strong>
-          <small>Fight other players</small>
+          <h2>PVP</h2>
+          <p>Fight other players</p>
         </div>
       </div>
 
-      <div class="players">
 
-        <div class="player-card">
-          <div class="player-avatar">😎</div>
-          <b>72%</b>
+      <div class="pvp-fight">
+
+        <div class="pvp-player">
+
+          <div class="player-avatar">
+            😎
+          </div>
+
+          <strong>72%</strong>
+
         </div>
 
-        <div class="vs">VS</div>
 
-        <div class="player-card">
-          <div class="player-avatar">👹</div>
-          <b>28%</b>
+        <div class="vs">
+          VS
+        </div>
+
+
+        <div class="pvp-player">
+
+          <div class="player-avatar">
+            👹
+          </div>
+
+          <strong>28%</strong>
+
         </div>
 
       </div>
@@ -119,51 +148,58 @@
     <!-- PLAY HUB -->
     <section class="play-banner">
 
-      <div>
-        <span class="play-icon">🎮</span>
+      <div class="play-left">
+
+        <div class="play-icon">
+          🎮
+        </div>
 
         <div>
           <h2>Play Hub</h2>
           <p>Play games & earn rewards</p>
         </div>
+
       </div>
 
-      <span class="arrow">›</span>
+      <div class="play-arrow">
+        ›
+      </div>
 
     </section>
 
 
-    <!-- BOXES -->
+    <!-- GIFT BOXES -->
     <section class="boxes-section">
 
-      <div class="section-title">
-        <h2>Gift Boxes</h2>
+      <div class="section-heading">
+
+        <div>
+          <h2>Gift Boxes</h2>
+          <p>Choose your box</p>
+        </div>
+
         <span>🎁</span>
+
       </div>
 
 
       <div class="gift-box-grid">
 
 
-        <!-- FREE 24H -->
-        <div
+        <!-- FREE -->
+        <article
           class="gift-box-card free24"
           data-box="FREE 24H"
           data-price="FREE"
         >
 
-          <div class="box-badge">FREE</div>
+          <span class="box-price free-price">
+            FREE
+          </span>
 
-          <div
-            class="box-art"
-            style="
-              position:absolute;
-              left:50%;
-              bottom:18px;
-              transform:translateX(-50%);
-              font-size:70px;
-            "
-          >
+          <div class="box-glow"></div>
+
+          <div class="box-art">
             🎁
           </div>
 
@@ -172,28 +208,23 @@
             <span>Every 24 hours</span>
           </div>
 
-        </div>
+        </article>
 
 
         <!-- FARM -->
-        <div
+        <article
           class="gift-box-card"
           data-box="FARM"
           data-price="0.1 TON"
         >
 
-          <div class="box-badge">0.1 TON</div>
+          <span class="box-price">
+            0.1 TON
+          </span>
 
-          <div
-            class="box-art"
-            style="
-              position:absolute;
-              left:50%;
-              bottom:18px;
-              transform:translateX(-50%);
-              font-size:70px;
-            "
-          >
+          <div class="box-glow"></div>
+
+          <div class="box-art">
             🌾
           </div>
 
@@ -202,28 +233,23 @@
             <span>0.1 TON</span>
           </div>
 
-        </div>
+        </article>
 
 
         <!-- HEART -->
-        <div
+        <article
           class="gift-box-card"
           data-box="HEART"
           data-price="1 TON"
         >
 
-          <div class="box-badge">1 TON</div>
+          <span class="box-price">
+            1 TON
+          </span>
 
-          <div
-            class="box-art"
-            style="
-              position:absolute;
-              left:50%;
-              bottom:18px;
-              transform:translateX(-50%);
-              font-size:70px;
-            "
-          >
+          <div class="box-glow"></div>
+
+          <div class="box-art">
             ❤️
           </div>
 
@@ -232,28 +258,23 @@
             <span>1 TON</span>
           </div>
 
-        </div>
+        </article>
 
 
         <!-- RING -->
-        <div
+        <article
           class="gift-box-card"
           data-box="RING"
           data-price="TON"
         >
 
-          <div class="box-badge">TON</div>
+          <span class="box-price">
+            TON
+          </span>
 
-          <div
-            class="box-art"
-            style="
-              position:absolute;
-              left:50%;
-              bottom:18px;
-              transform:translateX(-50%);
-              font-size:70px;
-            "
-          >
+          <div class="box-glow"></div>
+
+          <div class="box-art">
             💍
           </div>
 
@@ -262,28 +283,23 @@
             <span>Epic Gift</span>
           </div>
 
-        </div>
+        </article>
 
 
         <!-- VIP -->
-        <div
+        <article
           class="gift-box-card"
           data-box="VIP"
           data-price="100 TON"
         >
 
-          <div class="box-badge">100 TON</div>
+          <span class="box-price">
+            100 TON
+          </span>
 
-          <div
-            class="box-art"
-            style="
-              position:absolute;
-              left:50%;
-              bottom:18px;
-              transform:translateX(-50%);
-              font-size:70px;
-            "
-          >
+          <div class="box-glow"></div>
+
+          <div class="box-art">
             👑
           </div>
 
@@ -292,28 +308,23 @@
             <span>100 TON</span>
           </div>
 
-        </div>
+        </article>
 
 
         <!-- ELITE -->
-        <div
+        <article
           class="gift-box-card"
           data-box="ELITE"
           data-price="250 TON"
         >
 
-          <div class="box-badge">250 TON</div>
+          <span class="box-price">
+            250 TON
+          </span>
 
-          <div
-            class="box-art"
-            style="
-              position:absolute;
-              left:50%;
-              bottom:18px;
-              transform:translateX(-50%);
-              font-size:70px;
-            "
-          >
+          <div class="box-glow"></div>
+
+          <div class="box-art">
             💎
           </div>
 
@@ -322,7 +333,7 @@
             <span>250 TON</span>
           </div>
 
-        </div>
+        </article>
 
       </div>
 
@@ -359,111 +370,38 @@
 
     </nav>
 
-  </div>
+  </main>
 
 
   <!-- BOX POPUP -->
-  <div
-    id="boxPopup"
-    style="
-      display:none;
-      position:fixed;
-      inset:0;
-      z-index:999;
-      background:rgba(0,0,0,.75);
-      align-items:flex-end;
-      justify-content:center;
-      padding:12px;
-    "
-  >
+  <div id="boxPopup" class="box-popup">
 
-    <div
-      style="
-        width:100%;
-        max-width:520px;
-        background:#222224;
-        border-radius:24px;
-        padding:20px;
-        color:white;
-        box-shadow:0 20px 60px rgba(0,0,0,.6);
-      "
-    >
+    <div class="box-popup-card">
 
-      <div
-        style="
-          display:flex;
-          justify-content:space-between;
-          align-items:center;
-          margin-bottom:18px;
-        "
-      >
+      <div class="popup-header">
 
-        <strong
-          id="popupTitle"
-          style="font-size:20px;"
-        >
+        <strong id="popupTitle">
           Gift Box
         </strong>
 
-        <button
-          id="popupClose"
-          style="
-            border:0;
-            background:#333338;
-            color:white;
-            width:36px;
-            height:36px;
-            border-radius:12px;
-            font-size:18px;
-          "
-        >
-          ✕
+        <button id="popupClose">
+          ×
         </button>
 
       </div>
 
 
-      <div
-        id="popupContent"
-        style="
-          text-align:center;
-          padding:10px 0;
-        "
-      >
+      <div class="popup-content">
 
-        <div
-          id="popupEmoji"
-          style="
-            font-size:80px;
-            margin-bottom:12px;
-          "
-        >
+        <div id="popupEmoji" class="popup-emoji">
           🎁
         </div>
 
-        <p
-          id="popupPrice"
-          style="
-            color:#aaa;
-            margin:8px 0 18px;
-          "
-        >
+        <p id="popupPrice">
           Gift Box
         </p>
 
-        <button
-          id="openBoxButton"
-          style="
-            width:100%;
-            border:0;
-            border-radius:14px;
-            padding:15px;
-            background:#8b5cf6;
-            color:white;
-            font-size:16px;
-            font-weight:bold;
-          "
-        >
+        <button id="openBoxButton">
           OPEN BOX
         </button>
 
@@ -486,8 +424,8 @@
       const popupTitle = document.getElementById("popupTitle");
       const popupPrice = document.getElementById("popupPrice");
       const popupEmoji = document.getElementById("popupEmoji");
-      const close = document.getElementById("popupClose");
-      const openButton = document.getElementById("openBoxButton");
+      const popupClose = document.getElementById("popupClose");
+      const openBoxButton = document.getElementById("openBoxButton");
 
       let selectedBox = "";
 
@@ -501,68 +439,71 @@
       };
 
 
-      document
-        .querySelectorAll(".gift-box-card")
-        .forEach((card) => {
+      document.querySelectorAll(".gift-box-card").forEach(card => {
 
-          card.addEventListener("click", () => {
+        card.addEventListener("click", () => {
 
-            selectedBox =
-              card.dataset.box || "Gift Box";
+          selectedBox = card.dataset.box || "Gift Box";
 
-            const price =
-              card.dataset.price || "";
+          const price = card.dataset.price || "";
 
-            popupTitle.textContent =
-              selectedBox;
+          popupTitle.textContent = selectedBox;
+
+          popupEmoji.textContent =
+            emojis[selectedBox] || "🎁";
+
+          if (price === "FREE") {
 
             popupPrice.textContent =
-              price === "FREE"
-                ? "Free reward — once every 24 hours"
-                : "Price: " + price;
+              "Free reward — once every 24 hours";
 
-            popupEmoji.textContent =
-              emojis[selectedBox] || "🎁";
+            openBoxButton.textContent =
+              "CLAIM FREE GIFT";
 
-            openButton.textContent =
-              price === "FREE"
-                ? "CLAIM FREE GIFT"
-                : "OPEN BOX";
+          } else {
 
-            popup.style.display = "flex";
+            popupPrice.textContent =
+              "Price: " + price;
 
-          });
+            openBoxButton.textContent =
+              "OPEN BOX";
+
+          }
+
+          popup.classList.add("show");
 
         });
 
-
-      close.addEventListener("click", () => {
-        popup.style.display = "none";
       });
 
 
-      popup.addEventListener("click", (event) => {
+      popupClose.addEventListener("click", () => {
+        popup.classList.remove("show");
+      });
+
+
+      popup.addEventListener("click", event => {
 
         if (event.target === popup) {
-          popup.style.display = "none";
+          popup.classList.remove("show");
         }
 
       });
 
 
-      openButton.addEventListener("click", () => {
+      openBoxButton.addEventListener("click", () => {
 
         if (selectedBox === "FREE 24H") {
 
           alert(
-            "🎁 Your 24-hour free gift will be connected to the real reward system in the next step."
+            "🎁 The 24-hour free gift system will be connected to the backend."
           );
 
         } else {
 
           alert(
             selectedBox +
-            " will be connected to real TON payment and backend in the next step."
+            " will be connected to real TON payment and backend."
           );
 
         }
