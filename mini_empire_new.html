@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#111214">
+<title>Mini Empire</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header class="top">
+    <button id="menu">☰</button>
+    <div class="brand"><b>MINI</b><span>EMPIRE</span></div>
+    <button id="profile">●</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-top"><span>MINING POWER</span><b id="power">100</b></div>
+      <div class="hash"><b id="hashes">0</b><span>HASHES</span></div>
+      <div class="rate"><span>HASHES/day</span><b id="rate">12,000</b></div>
+      <div class="progress"><i id="progress"></i></div>
+      <div class="timer"><span>Mining</span><b id="timer">23:59:59</b></div>
+    </section>
+
+    <section class="contract">
+      <div class="title"><b>YOUR CONTRACTS</b><button id="contracts">VIEW ALL</button></div>
+      <div class="contract-card">
+        <div class="contract-icon">⚡</div>
+        <div class="contract-info"><b>Mining Contract</b><small>Active · producing HASHES</small></div>
+        <div class="contract-power">+12K<br><small>/day</small></div>
+      </div>
+    </section>
+
+    <section class="swap">
+      <div class="swap-head"><div><small>CONVERT YOUR BALANCE</small><h2>SWAP HASHES → GRAM</h2></div><span>◆</span></div>
+      <div class="swap-box"><div><small>HASHES</small><b id="swapHashes">0</b></div><span>→</span><div><small>GRAM</small><b id="gram">0.000</b></div></div>
+      <button class="primary" id="swapBtn">SWAP HASHES → GRAM</button>
+      <p>Conversion is available when you have enough HASHES.</p>
+    </section>
+
+    <section class="power-grid">
+      <button class="power-card buy" id="buyPower"><span>⚡</span><div><small>POWER</small><b>Buy POWER</b><em>+</em></div></button>
+      <button class="power-card free" id="freePower"><span>🎁</span><div><small>DAILY TASK</small><b>Free POWER</b><em>›</em></div></button>
+    </section>
+
+    <section class="quick">
+      <button data-page="shop"><span>🛒</span><b>SHOP</b><small>Boost your mining</small></button>
+      <button data-page="trophy"><span>🏆</span><b>TROPHY</b><small>Your achievements</small></button>
+      <button data-page="team"><span>👥</span><b>TEAM</b><small>Invite friends</small></button>
+      <button data-page="earn"><span>✦</span><b>EARN</b><small>Get rewards</small></button>
+    </section>
+  </main>
+
+  <nav>
+    <button class="active" data-nav="home">⌂<small>HOME</small></button>
+    <button data-nav="shop">▣<small>SHOP</small></button>
+    <button data-nav="trophy">♛<small>TROPHY</small></button>
+    <button data-nav="team">♙<small>TEAM</small></button>
+    <button data-nav="earn">✦<small>EARN</small></button>
+    <button data-nav="more">•••<small>MORE</small></button>
+    <button data-nav="payouts">↗<small>PAYOUTS</small></button>
+  </nav>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
