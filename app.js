@@ -1,148 +1,677 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  // Telegram Mini App
   if (window.Telegram?.WebApp) {
     Telegram.WebApp.ready();
     Telegram.WebApp.expand();
   }
 
-  const openPanel = (title, text) => {
-    document.querySelector(".epic-panel")?.remove();
+  // =========================
+  // FULL PAGE SYSTEM
+  // =========================
 
-    const panel = document.createElement("div");
-    panel.className = "epic-panel";
+  function openPage(title, content) {
 
-    panel.innerHTML = `
-      <div class="epic-panel-box">
-        <div class="epic-panel-head">
-          <strong>${title}</strong>
-          <button class="epic-panel-close">×</button>
-        </div>
-        <div class="epic-panel-body">${text}</div>
+    document.querySelector(".epic-page")?.remove();
+
+    const page = document.createElement("div");
+
+    page.className = "epic-page";
+
+    page.innerHTML = `
+      <div class="epic-page-top">
+
+        <button class="epic-page-back">
+          ‹
+        </button>
+
+        <strong>${title}</strong>
+
+        <div class="epic-page-spacer"></div>
+
+      </div>
+
+      <div class="epic-page-content">
+        ${content}
       </div>
     `;
 
-    panel.querySelector(".epic-panel-close").onclick = () => {
-      panel.remove();
-    };
+    const backButton =
+      page.querySelector(".epic-page-back");
 
-    panel.onclick = e => {
-      if (e.target === panel) panel.remove();
-    };
+    backButton.addEventListener("click", () => {
+      page.remove();
+    });
 
-    document.body.appendChild(panel);
-  };
+    document.body.appendChild(page);
+  }
 
-  document.querySelector(".close")?.addEventListener("click", () => {
-    if (window.Telegram?.WebApp) {
-      Telegram.WebApp.close();
-    } else {
-      openPanel(
-        "Epic Gift",
-        "این دکمه داخل Telegram Mini App پنجره را می‌بندد."
-      );
-    }
-  });
 
-  document.querySelector(".menu")?.addEventListener("click", () => {
-    openPanel(
-      "Menu",
+  // =========================
+  // SIMPLE INFORMATION PAGE
+  // =========================
+
+  function openMessage(title, message) {
+
+    openPage(
+      title,
+
       `
-        <div style="display:grid;gap:9px">
-          <button style="padding:14px;border-radius:13px;background:#292930;color:#fff">
-            Profile
-          </button>
-          <button style="padding:14px;border-radius:13px;background:#292930;color:#fff">
-            Settings
-          </button>
-          <button style="padding:14px;border-radius:13px;background:#292930;color:#fff">
-            Support
-          </button>
+      <div class="epic-info-card">
+
+        <div class="epic-info-icon">
+          ✦
         </div>
+
+        <h2>
+          ${title}
+        </h2>
+
+        <p>
+          ${message}
+        </p>
+
+      </div>
       `
     );
-  });
 
-  document.querySelector(".deposit")?.addEventListener("click", () => {
-    openPanel(
-      "Deposit",
-      "اتصال واقعی TON و Telegram Gifts را در مرحله بک‌اند اضافه می‌کنیم."
-    );
-  });
+  }
 
-  document.querySelector(".rocket-banner")?.addEventListener("click", () => {
-    openPanel(
-      "Rocket",
-      "Rocket Mode آماده است. سیستم ضریب، شرط و Cash Out در مرحله بعد اضافه می‌شود."
-    );
-  });
 
-  document.querySelector(".pvp-banner")?.addEventListener("click", () => {
-    openPanel(
-      "PvP",
-      "PvP برای بازی مقابل بازیکن‌ها طراحی می‌شود. موجودی و Prize Pool بعداً به بک‌اند وصل می‌شود."
-    );
-  });
+  // =========================
+  // CLOSE MINI APP
+  // =========================
 
-  document.querySelector(".play-banner")?.addEventListener("click", () => {
-    openPanel(
-      "Play Hub",
-      "بخش بازی‌ها و حالت‌های مختلف Epic Gift اینجا قرار می‌گیرد."
-    );
-  });
+  document
+    .querySelector(".close")
+    ?.addEventListener("click", () => {
 
-  document.querySelector(".free24")?.addEventListener("click", () => {
-    openPanel(
+      if (window.Telegram?.WebApp) {
+        Telegram.WebApp.close();
+      }
+
+    });
+
+
+  // =========================
+  // MENU
+  // =========================
+
+  document
+    .querySelector(".menu")
+    ?.addEventListener("click", () => {
+
+      openPage(
+        "Menu",
+
+        `
+        <div class="page-list">
+
+          <button>
+            <span>Profile</span>
+            <span>›</span>
+          </button>
+
+          <button>
+            <span>Settings</span>
+            <span>›</span>
+          </button>
+
+          <button>
+            <span>Support</span>
+            <span>›</span>
+          </button>
+
+        </div>
+        `
+      );
+
+    });
+
+
+  // =========================
+  // DEPOSIT
+  // =========================
+
+  document
+    .querySelector(".deposit")
+    ?.addEventListener("click", () => {
+
+      openMessage(
+        "Deposit",
+        "اتصال واقعی TON و Telegram Gifts در مرحله بک‌اند اضافه می‌شود."
+      );
+
+    });
+
+
+  // =========================
+  // ROCKET
+  // =========================
+
+  document
+    .querySelector(".rocket-banner")
+    ?.addEventListener("click", () => {
+
+      openPage(
+        "Rocket",
+
+        `
+        <div class="game-hero rocket-page">
+
+          <span>
+            PLAY MODE
+          </span>
+
+          <h1>
+            ROCKET
+          </h1>
+
+          <p>
+            Cash out before the crash.
+          </p>
+
+        </div>
+
+
+        <div class="epic-info-card">
+
+          <h2>
+            Rocket Mode
+          </h2>
+
+          <p>
+            ضریب بازی، شرط و Cash Out در این بخش قرار می‌گیرد.
+          </p>
+
+          <button
+            class="primary-action"
+            id="startRocket"
+          >
+            START ROCKET
+          </button>
+
+        </div>
+        `
+      );
+
+
+      document
+        .getElementById("startRocket")
+        ?.addEventListener("click", () => {
+
+          openMessage(
+            "Rocket",
+            "سیستم واقعی Rocket هنوز به بک‌اند متصل نشده است."
+          );
+
+        });
+
+    });
+
+
+  // =========================
+  // PVP
+  // =========================
+
+  document
+    .querySelector(".pvp-banner")
+    ?.addEventListener("click", () => {
+
+      openPage(
+        "PvP",
+
+        `
+        <div class="game-hero pvp-page">
+
+          <span>
+            BATTLE MODE
+          </span>
+
+          <h1>
+            PVP
+          </h1>
+
+          <p>
+            Fight for the bank.
+          </p>
+
+        </div>
+
+
+        <div class="epic-info-card">
+
+          <h2>
+            PvP Arena
+          </h2>
+
+          <p>
+            اینجا محل ورود به مسابقه‌های PvP و Prize Pool خواهد بود.
+          </p>
+
+          <button
+            class="primary-action"
+            id="findMatch"
+          >
+            FIND MATCH
+          </button>
+
+        </div>
+        `
+      );
+
+
+      document
+        .getElementById("findMatch")
+        ?.addEventListener("click", () => {
+
+          openMessage(
+            "PvP",
+            "سیستم Matchmaking هنوز به بک‌اند متصل نشده است."
+          );
+
+        });
+
+    });
+
+
+  // =========================
+  // PLAY HUB
+  // =========================
+
+  document
+    .querySelector(".play-banner")
+    ?.addEventListener("click", () => {
+
+      openPage(
+        "Play Hub",
+
+        `
+        <div class="page-list">
+
+          <button id="hubRocket">
+            <span>Rocket</span>
+            <span>›</span>
+          </button>
+
+          <button id="hubPvp">
+            <span>PvP</span>
+            <span>›</span>
+          </button>
+
+          <button id="hubFree24">
+            <span>FREE24</span>
+            <span>›</span>
+          </button>
+
+          <button id="hubFarm">
+            <span>FARM</span>
+            <span>›</span>
+          </button>
+
+        </div>
+        `
+      );
+
+
+      document
+        .getElementById("hubRocket")
+        ?.addEventListener("click", () => {
+
+          openPage(
+            "Rocket",
+
+            `
+            <div class="game-hero rocket-page">
+
+              <span>
+                PLAY MODE
+              </span>
+
+              <h1>
+                ROCKET
+              </h1>
+
+              <p>
+                Cash out before the crash.
+              </p>
+
+            </div>
+            `
+          );
+
+        });
+
+
+      document
+        .getElementById("hubPvp")
+        ?.addEventListener("click", () => {
+
+          openPage(
+            "PvP",
+
+            `
+            <div class="game-hero pvp-page">
+
+              <span>
+                BATTLE MODE
+              </span>
+
+              <h1>
+                PVP
+              </h1>
+
+              <p>
+                Fight for the bank.
+              </p>
+
+            </div>
+            `
+          );
+
+        });
+
+
+      document
+        .getElementById("hubFree24")
+        ?.addEventListener("click", () => {
+
+          openFree24();
+
+        });
+
+
+      document
+        .getElementById("hubFarm")
+        ?.addEventListener("click", () => {
+
+          openFarm();
+
+        });
+
+    });
+
+
+  // =========================
+  // FREE24 PAGE
+  // =========================
+
+  function openFree24() {
+
+    openPage(
       "FREE24",
-      "این باکس برای دریافت جایزه روزانه طراحی شده است."
-    );
-  });
 
-  document.querySelector(".free")?.addEventListener("click", () => {
-    openPanel(
-      "FARM",
-      "Farm Box می‌تواند شامل Giftهای مختلف باشد."
+      `
+      <div class="box-page-art free-art">
+
+        <div class="box-lid"></div>
+
+        <div class="box-body"></div>
+
+        <div class="box-ribbon"></div>
+
+      </div>
+
+
+      <div class="epic-info-card">
+
+        <span class="eyebrow">
+          DAILY GIFT
+        </span>
+
+        <h2>
+          FREE24
+        </h2>
+
+        <p>
+          هر ۲۴ ساعت یک بار می‌توانی جایزه روزانه خودت را بررسی کنی.
+        </p>
+
+        <button
+          class="primary-action"
+          id="claimFree24"
+        >
+          CLAIM FREE24
+        </button>
+
+      </div>
+      `
     );
-  });
+
+
+    document
+      .getElementById("claimFree24")
+      ?.addEventListener("click", () => {
+
+        openMessage(
+          "FREE24",
+          "سیستم دریافت جایزه واقعی بعد از اتصال بک‌اند فعال می‌شود."
+        );
+
+      });
+
+  }
+
+
+  // =========================
+  // FARM PAGE
+  // =========================
+
+  function openFarm() {
+
+    openPage(
+      "FARM",
+
+      `
+      <div class="box-page-art farm-art">
+
+        <div class="farm-box"></div>
+
+        <div class="farm-leaf one"></div>
+
+        <div class="farm-leaf two"></div>
+
+      </div>
+
+
+      <div class="epic-info-card">
+
+        <span class="eyebrow">
+          GIFT BOX
+        </span>
+
+        <h2>
+          FARM
+        </h2>
+
+        <p>
+          Farm Box می‌تواند شامل Giftهای مختلف باشد.
+        </p>
+
+        <button
+          class="primary-action"
+          id="openFarm"
+        >
+          OPEN FARM
+        </button>
+
+      </div>
+      `
+    );
+
+
+    document
+      .getElementById("openFarm")
+      ?.addEventListener("click", () => {
+
+        openMessage(
+          "FARM",
+          "سیستم واقعی باز کردن Farm Box بعداً به بک‌اند متصل می‌شود."
+        );
+
+      });
+
+  }
+
+
+  // =========================
+  // FREE24 BUTTON
+  // =========================
+
+  document
+    .querySelector(".free24")
+    ?.addEventListener("click", () => {
+
+      openFree24();
+
+    });
+
+
+  // =========================
+  // FARM BUTTON
+  // =========================
+
+  document
+    .querySelector(".free")
+    ?.addEventListener("click", () => {
+
+      openFarm();
+
+    });
+
+
+  // =========================
+  // OTHER GIFT BOXES
+  // =========================
+
+  document
+    .querySelectorAll(
+      ".box-card:not(.free24):not(.free)"
+    )
+    .forEach(card => {
+
+      card.addEventListener("click", () => {
+
+        const title =
+          card.querySelector("strong")
+            ?.textContent || "Gift";
+
+        const description =
+          card.querySelector("span")
+            ?.textContent || "Special Gift";
+
+        openPage(
+          title,
+
+          `
+          <div class="epic-info-card">
+
+            <div class="epic-info-icon">
+              ✦
+            </div>
+
+            <h2>
+              ${title}
+            </h2>
+
+            <p>
+              ${description}
+            </p>
+
+            <button
+              class="primary-action"
+              id="giftAction"
+            >
+              OPEN GIFT
+            </button>
+
+          </div>
+          `
+        );
+
+
+        document
+          .getElementById("giftAction")
+          ?.addEventListener("click", () => {
+
+            openMessage(
+              title,
+              "سیستم واقعی این Gift هنوز به بک‌اند متصل نشده است."
+            );
+
+          });
+
+      });
+
+    });
+
+
+  // =========================
+  // BOTTOM NAVIGATION
+  // =========================
 
   const navInfo = {
+
     Backpack: [
       "Backpack",
       "Giftهای دریافت‌شده و موجودی شما اینجا نمایش داده می‌شود."
     ],
+
     Invite: [
       "Invite",
       "لینک Referral و پاداش دعوت دوستان اینجا قرار می‌گیرد."
     ],
+
     Leaderboard: [
       "Leaderboard",
-      "رتبه بازیکنان و جوایز این بخش بعداً به سیستم واقعی متصل می‌شود."
+      "رتبه بازیکنان و جوایز این بخش اینجا نمایش داده می‌شود."
     ],
+
     Earn: [
       "Earn",
       "Taskها و POWER قابل دریافت اینجا نمایش داده می‌شوند."
     ]
+
   };
 
-  document.querySelectorAll(".bottom-nav button").forEach(button => {
 
-    button.addEventListener("click", () => {
+  document
+    .querySelectorAll(".bottom-nav button")
+    .forEach(button => {
 
-      document
-        .querySelectorAll(".bottom-nav button")
-        .forEach(item => item.classList.remove("active"));
+      button.addEventListener("click", () => {
 
-      button.classList.add("active");
+        document
+          .querySelectorAll(".bottom-nav button")
+          .forEach(item => {
 
-      const name = button.querySelector("span")?.textContent;
+            item.classList.remove("active");
 
-      if (name !== "Home" && navInfo[name]) {
-        openPanel(
-          navInfo[name][0],
-          navInfo[name][1]
-        );
-      }
+          });
+
+
+        button.classList.add("active");
+
+
+        const name =
+          button.querySelector("span")
+            ?.textContent;
+
+
+        if (
+          name !== "Home" &&
+          navInfo[name]
+        ) {
+
+          openMessage(
+            navInfo[name][0],
+            navInfo[name][1]
+          );
+
+        }
+
+      });
+
     });
-
-  });
 
 });
