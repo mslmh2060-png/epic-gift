@@ -1,90 +1,481 @@
-*{box-sizing:border-box}
-:root{
-  --bg:#070a12;
-  --panel:#101625;
-  --panel2:#0c1220;
-  --line:#202a43;
-  --text:#f7f8ff;
-  --muted:#8e96ad;
-  --purple:#8b5cf6;
-  --purple2:#5b21b6;
-  --blue:#4169ff;
+* {
+  box-sizing: border-box;
 }
 
-html,body{
-  margin:0;
-  min-height:100%;
-  background:var(--bg);
-  color:var(--text);
+:root {
+  --bg: #070a12;
+  --panel: #101625;
+  --panel2: #0c1220;
+  --line: #202a43;
+  --text: #f7f8ff;
+  --muted: #8e96ad;
+  --purple: #8b5cf6;
+  --purple2: #5b21b6;
+  --blue: #4169ff;
 }
 
-body{
-  font-family:Arial,"Segoe UI",sans-serif;
-  padding-bottom:88px;
-  overflow-x:hidden;
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
 }
 
-body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
+body {
+  font-family: Arial, "Segoe UI", sans-serif;
+  padding-bottom: 105px;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
   background:
-    radial-gradient(circle at 50% 25%,rgba(91,33,182,.12),transparent 28%),
-    radial-gradient(circle at 10% 80%,rgba(65,105,255,.05),transparent 24%);
+    radial-gradient(
+      circle at 50% 25%,
+      rgba(91, 33, 182, 0.15),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 15% 75%,
+      rgba(65, 105, 255, 0.07),
+      transparent 25%
+    );
+  z-index: 0;
 }
 
-#app{
-  max-width:760px;
-  margin:0 auto;
-  min-height:100vh;
+#app {
+  max-width: 760px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 
-.top{
-  height:68px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 20px;
-  background:#0c1020;
-  border-bottom:1px solid #1d2740;
-  position:sticky;
-  top:0;
-  z-index:5;
+/* HEADER */
+
+.top {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  background: #0c1020;
+  border-bottom: 1px solid #1d2740;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-.brand{
-  font-weight:800;
-  font-size:23px;
-  letter-spacing:.2px;
+.brand {
+  font-weight: 800;
+  font-size: 27px;
+  letter-spacing: 0.2px;
 }
 
-.top>div:last-child{
-  width:38px;
-  height:38px;
-  display:grid;
-  place-items:center;
-  border-radius:50%;
-  background:#11182a;
-  border:1px solid #29324d;
-  font-size:21px;
+.top > div:last-child {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #11182a;
+  border: 1px solid #29324d;
+  font-size: 25px;
 }
 
-.hero{
-  text-align:center;
-  padding:46px 16px 25px;
+/* HERO */
+
+.hero {
+  text-align: center;
+  padding: 55px 16px 30px;
 }
 
-.bolt{
-  width:148px;
-  height:148px;
-  margin:auto;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  font-size:76px;
+.bolt {
+  width: 170px;
+  height: 170px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 88px;
+
   background:
-    radial-gradient(circle at 50% 40%,#1d2541 0%,#11172a 58%,#0b1020 100%);
-  border:1px solid #202a49;
+    radial-gradient(
+      circle at 50% 40%,
+      #242b4d 0%,
+      #151b32 55%,
+      #0b1020 100%
+    );
+
+  border: 1px solid #303a63;
+
   box-shadow:
-    0 0 18px rgba(139
+    0 0 25px rgba(139, 92, 246, 0.35),
+    0 0 70px rgba(91, 33, 182, 0.18),
+    inset 0 0 35px rgba(139, 92, 246, 0.08);
+}
+
+.label {
+  color: var(--muted);
+  font-size: 20px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.big {
+  font-size: 38px;
+  font-weight: 800;
+  margin: 5px 0 12px;
+  letter-spacing: 1px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+/* STATS */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 0 18px 30px;
+}
+
+.stats > div {
+  min-height: 110px;
+  padding: 18px 10px;
+  border-radius: 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.stats b {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.stats span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* CONTRACTS */
+
+h2 {
+  margin: 8px 20px 15px;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.card {
+  margin: 0 18px 16px;
+  padding: 20px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(16, 22, 37, 0.98),
+      rgba(12, 18, 32, 0.98)
+    );
+
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.row b {
+  font-size: 20px;
+}
+
+.row span {
+  color: var(--text);
+  font-size: 15px;
+}
+
+.progress {
+  height: 10px;
+  margin: 18px 0 9px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #202942;
+}
+
+.progress i {
+  display: block;
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    var(--purple2),
+    var(--purple),
+    var(--blue)
+  );
+}
+
+/* BUTTONS */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: 0;
+}
+
+.primary {
+  display: block;
+  width: calc(100% - 36px);
+  margin: 8px 18px 12px;
+  min-height: 54px;
+
+  border-radius: 16px;
+  border: 1px solid #394879;
+
+  color: white;
+  background:
+    linear-gradient(
+      135deg,
+      #5b21b6,
+      #4169ff
+    );
+
+  font-size: 17px;
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 25px rgba(65, 105, 255, 0.18);
+}
+
+.primary:active {
+  transform: scale(0.98);
+}
+
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 0 18px 18px;
+}
+
+.two button {
+  min-height: 50px;
+  border-radius: 15px;
+
+  background: var(--panel);
+  color: var(--text);
+
+  border: 1px solid var(--line);
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.two button:active {
+  transform: scale(0.98);
+}
+
+/* HIDDEN PAGE */
+
+.hidden {
+  display: none !important;
+}
+
+#page {
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+/* BOTTOM NAVIGATION */
+
+.nav {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+
+  transform: translateX(-50%);
+
+  width: 100%;
+  max-width: 760px;
+
+  height: 82px;
+
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+
+  background: rgba(10, 14, 27, 0.97);
+  border-top: 1px solid #202a43;
+
+  z-index: 100;
+
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.nav button {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  background: transparent;
+  color: #8e96ad;
+
+  font-size: 22px;
+}
+
+.nav button span {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.nav button:hover,
+.nav button:active {
+  color: #a78bfa;
+}
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+  .top {
+    height: 68px;
+    padding: 0 18px;
+  }
+
+  .brand {
+    font-size: 24px;
+  }
+
+  .top > div:last-child {
+    width: 42px;
+    height: 42px;
+  }
+
+  .hero {
+    padding-top: 45px;
+  }
+
+  .bolt {
+    width: 165px;
+    height: 165px;
+    font-size: 84px;
+  }
+
+  .big {
+    font-size: 32px;
+  }
+
+  .stats {
+    gap: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .stats > div {
+    min-height: 105px;
+    border-radius: 18px;
+  }
+
+  .stats b {
+    font-size: 21px;
+  }
+
+  .stats span {
+    font-size: 12px;
+  }
+
+  h2 {
+    margin-left: 16px;
+    margin-right: 16px;
+    font-size: 23px;
+  }
+
+  .card {
+    margin-left: 14px;
+    margin-right: 14px;
+    border-radius: 20px;
+  }
+
+  .primary {
+    width: calc(100% - 28px);
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+
+  .two {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .nav {
+    height: 78px;
+  }
+
+  .nav button {
+    font-size: 20px;
+  }
+
+  .nav button span {
+    font-size: 9px;
+  }
+}
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 370px) {
+
+  .brand {
+    font-size: 21px;
+  }
+
+  .bolt {
+    width: 145px;
+    height: 145px;
+    font-size: 72px;
+  }
+
+  .big {
+    font-size: 27px;
+  }
+
+  .stats > div {
+    min-height: 95px;
+  }
+
+  .stats b {
+    font-size: 18px;
+  }
+
+  .stats span {
+    font-size: 10px;
+  }
+
+  .nav button span {
+    font-size: 8px;
+  }
+}
