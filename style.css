@@ -736,3 +736,35 @@ main{
     width:calc(100% - 14px);
   }
 }
+/* FIX BOTTOM NAV */
+
+.bottom-nav{
+  height:58px;
+  bottom:7px;
+  padding:4px;
+  border-radius:18px;
+}
+
+.bottom-nav button{
+  min-height:48px;
+  gap:2px;
+  font-size:7px;
+  border-radius:13px;
+}
+
+.bottom-nav button div{
+  font-size:16px;
+  line-height:17px;
+}
+
+.bottom-nav button.active{
+  min-height:50px;
+}
+
+.app{
+  padding-bottom:120px;
+}
+
+.free-grid{
+  padding-bottom:18px;
+}
