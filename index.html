@@ -1,26 +1,159 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Epic Gift</title>
 <link rel="stylesheet" href="style.css">
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
+
 <body>
-<main id="app">
-<header class="top"><div class="brand">⚡ Epic Gift</div><div>🇬🇧</div></header>
-<section class="hero"><div class="bolt">⚡</div><div class="label">HASHES MINED</div><div id="hashes" class="big">0.00000000</div><div class="muted">≈ 0.00000000 GRAM at current rate</div></section>
-<section class="stats"><div><b>130</b><span>HASHES/day</span></div><div><b id="power">200</b><span>POWER</span></div><div><b>1d 0h</b><span>next expiry</span></div></section>
-<h2>YOUR CONTRACTS</h2>
-<section class="card"><div class="row"><b>200 POWER</b><span>130 HASHES/day</span></div><div class="muted">Expires in 1d 0h</div><div class="progress"><i></i></div><div class="muted">0%</div></section>
-<button class="primary" id="swap">SWAP HASHES → GRAM</button>
-<div class="two"><button>Buy POWER</button><button id="freePower">Free POWER</button></div>
-<section id="page" class="card hidden"></section>
+
+<div id="app">
+
+<header class="top">
+  <div class="close">× <span>Close</span></div>
+  <div class="brand">🎁 Epic Gift</div>
+  <div class="menu">⌄ ⋮</div>
+</header>
+
+<section class="balance">
+
+  <div class="profile">
+    👤
+  </div>
+
+  <div class="balance-text">
+    <small>Your balance</small>
+    <strong>🔷 0.006</strong>
+  </div>
+
+  <button class="deposit">▣ &nbsp; Deposit</button>
+
+</section>
+
+<section class="live">
+
+  <div class="live-title">
+    <span></span>
+    Live
+  </div>
+
+  <div class="live-items">
+    <div>🧹</div>
+    <div>🔷</div>
+    <div>🎒</div>
+    <div>🎒</div>
+    <div>🔷</div>
+    <div>🎁</div>
+  </div>
+
+</section>
+
+<main>
+
+  <div class="banner rocket">
+    <div>
+      <small>⚡ HOT!</small>
+      <h2>🚀 ROCKET</h2>
+    </div>
+    <div class="rocket-icon">🚀</div>
+  </div>
+
+  <div class="banner pvp">
+    <div>
+      <h2>⚔️ PVP</h2>
+    </div>
+
+    <div class="players">
+      <div>DEGEN<br><b>3.8%</b></div>
+      <div>👤 MIKE_K<br><b>7.6%</b></div>
+      <div>TONNER<br><b>63.0%</b></div>
+    </div>
+  </div>
+
+  <div class="banner play">
+    <div>
+      <small>🔥 HOT</small>
+      <h2>🎮 PLAY HUB</h2>
+    </div>
+
+    <div class="games">
+      🟢 🟣 🔵
+    </div>
+  </div>
+
+  <div class="free-grid">
+
+    <div class="free-card">
+      <div class="free-art">🪙💍</div>
+      <b>FREE24</b>
+    </div>
+
+    <div class="free-card">
+      <div class="free-art">🍭🍄</div>
+      <b>FREE</b>
+    </div>
+
+  </div>
+
+  <section class="contracts">
+
+    <h2>YOUR CONTRACTS</h2>
+
+    <div class="contract-card">
+
+      <div class="contract-row">
+        <b>200 POWER</b>
+        <span>130 HASHES/day</span>
+      </div>
+
+      <p>Expires in 1d 0h</p>
+
+      <div class="progress">
+        <i></i>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="page" class="hidden"></section>
+
 </main>
+
 <nav class="nav">
-<button data-page="home">⌂<span>HOME</span></button><button data-page="shop">🛒<span>SHOP</span></button><button data-page="trophy">🏆<span>TROPHY</span></button><button data-page="team">👥<span>TEAM</span></button><button data-page="earn">✓<span>EARN</span></button><button data-page="more">☰<span>MORE</span></button><button data-page="payout">💸<span>PAYOUTS</span></button>
+
+  <button data-page="backpack">
+    📦
+    <span>BACKPACK</span>
+  </button>
+
+  <button data-page="team">
+    👥
+    <span>INVITE</span>
+  </button>
+
+  <button class="active" data-page="home">
+    🏠
+    <span>HOME</span>
+  </button>
+
+  <button data-page="trophy">
+    🏆
+    <span>LEADERBOARD</span>
+  </button>
+
+  <button data-page="earn">
+    🪙
+    <span>EARN</span>
+  </button>
+
 </nav>
+
+</div>
+
 <script src="app.js"></script>
+
 </body>
 </html>
