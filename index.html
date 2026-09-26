@@ -2,113 +2,146 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>Epic Gift</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<div id="app">
+<div class="app">
 
-<header class="header">
-  <button class="close">× <small>Close</small></button>
-  <div class="logo">🎁 <b>Epic Gift</b></div>
-  <button class="more">⌄ ⋮</button>
+<header class="topbar">
+  <button class="close">× <span>Close</span></button>
+
+  <div class="brand">
+    <div class="gift-icon">♧</div>
+    <b>Epic Gift</b>
+  </div>
+
+  <button class="menu">⌄ &nbsp;⋮</button>
 </header>
 
 <section class="balance">
-  <div class="avatar">👤</div>
+  <div class="avatar"></div>
 
   <div class="balance-info">
     <span>Your balance</span>
-    <b>💎 0.006</b>
+    <strong><i>◇</i> 0.006</strong>
   </div>
 
-  <button class="deposit">▣ &nbsp; Deposit</button>
+  <button class="deposit">
+    <span>▣</span> Deposit
+  </button>
 </section>
 
-<section class="live">
-  <div class="live-label">
+<section class="live-section">
+  <div class="live-title">
     <i></i>
     <b>Live</b>
   </div>
 
-  <div class="live-list">
-    <div>🧹</div>
-    <div>💎</div>
-    <div>🎒</div>
-    <div>🎒</div>
-    <div>💎</div>
-    <div>🎁</div>
+  <div class="live-scroll">
+    <div class="live-item broom"></div>
+    <div class="live-item ton"></div>
+    <div class="live-item bag"></div>
+    <div class="live-item bag"></div>
+    <div class="live-item ton"></div>
+    <div class="live-item gift"></div>
   </div>
 </section>
 
 <main>
 
-<section class="hero-card rocket">
-  <div class="hero-text">
-    <label>⚡ HOT!</label>
-    <h1>🚀 ROCKET</h1>
-  </div>
-  <div class="hero-image">🚀</div>
-</section>
+  <section class="banner rocket-banner">
+    <div class="hot">ϟ HOT!</div>
+    <div class="rocket-title">♧ ROCKET</div>
 
-<section class="hero-card pvp">
-  <div class="pvp-title">⚔️ <b>PVP</b></div>
-
-  <div class="pvp-users">
-    <div>DEGEN<strong>3.8%</strong></div>
-    <div>👤 MIKE_K<strong>7.6%</strong></div>
-    <div>TONNER<strong>63.0%</strong></div>
-  </div>
-</section>
-
-<section class="hero-card play">
-  <div>
-    <label>🔥 HOT</label>
-    <h1>🎮 PLAY HUB</h1>
-  </div>
-  <div class="play-games">🟢 🟣 🔵</div>
-</section>
-
-<section class="free-grid">
-  <div class="free-card gold">
-    <div>💍</div>
-    <b>FREE24</b>
-    <span>FREE REWARDS</span>
-  </div>
-
-  <div class="free-card purple">
-    <div>🍭🍄</div>
-    <b>FREE</b>
-    <span>FREE REWARDS</span>
-  </div>
-</section>
-
-<section class="contracts">
-  <h2>YOUR CONTRACTS</h2>
-
-  <div class="contract">
-    <div>
-      <b>200 POWER</b>
-      <span>Expires in 1d 0h</span>
+    <div class="rocket-art">
+      <div class="rocket-body">◈</div>
+      <span class="mult m1">x4.97</span>
+      <span class="mult m2">x3.08</span>
+      <span class="mult m3">x1.74</span>
     </div>
-    <strong>130 HASHES/day</strong>
+  </section>
 
-    <div class="bar"><i></i></div>
-  </div>
-</section>
+  <section class="banner pvp-banner">
+    <div class="pvp-title">⚔ PVP</div>
 
-<div id="page" class="hidden"></div>
+    <div class="players">
+      <div class="player">
+        <div class="player-img one"></div>
+        <b>DEGEN</b>
+        <span>3.8%</span>
+      </div>
+
+      <div class="player active-player">
+        <div class="player-img two"></div>
+        <b>MIKE_K</b>
+        <span>7.6%</span>
+      </div>
+
+      <div class="player">
+        <div class="player-img three"></div>
+        <b>TONNER</b>
+        <span>63.0%</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner play-banner">
+    <div class="hot">♨ HOT</div>
+    <div class="play-title">⌁ PLAY HUB</div>
+
+    <div class="games">
+      <div class="game green">↗</div>
+      <div class="game purple">•••</div>
+      <div class="game blue">▦</div>
+    </div>
+  </section>
+
+  <section class="free-grid">
+
+    <div class="free-card free24">
+      <div class="free-title">FREE<span>24</span></div>
+      <div class="ring">◉</div>
+    </div>
+
+    <div class="free-card free">
+      <div class="free-title">FREE</div>
+      <div class="free-art">●</div>
+    </div>
+
+  </section>
 
 </main>
 
-<nav class="nav">
-  <button data-page="backpack">📦<span>BACKPACK</span></button>
-  <button data-page="team">👥<span>INVITE</span></button>
-  <button class="home active" data-page="home">⌂<span>HOME</span></button>
-  <button data-page="trophy">🏆<span>LEADERBOARD</span></button>
-  <button data-page="earn">🪙<span>EARN</span></button>
+<nav class="bottom-nav">
+
+  <button>
+    <div>◇</div>
+    <span>Backpack</span>
+  </button>
+
+  <button>
+    <div>♙</div>
+    <span>Invite</span>
+  </button>
+
+  <button class="active">
+    <div>⌂</div>
+    <span>Home</span>
+  </button>
+
+  <button>
+    <div>♜</div>
+    <span>Leaderboard</span>
+  </button>
+
+  <button>
+    <div>◉</div>
+    <span>Earn</span>
+  </button>
+
 </nav>
 
 </div>
