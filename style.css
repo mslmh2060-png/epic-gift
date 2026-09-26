@@ -1,403 +1,425 @@
 *{box-sizing:border-box}
 
 :root{
-  --bg:#171717;
-  --panel:#202020;
-  --purple:#8b5cf6;
-  --purple2:#6d28d9;
-  --text:#fff;
-  --muted:#9b9b9b;
+--bg:#191919;
+--dark:#202020;
+--card:#242424;
+--purple:#8b5cf6;
+--white:#fff;
+--gray:#999
 }
 
 html,body{
-  margin:0;
-  min-height:100%;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial,"Segoe UI",sans-serif;
+margin:0;
+background:var(--bg);
+color:white;
+font-family:Arial,"Segoe UI",sans-serif
 }
 
 body{
-  padding-bottom:90px;
-  overflow-x:hidden;
+padding-bottom:90px;
+overflow-x:hidden
 }
 
 #app{
-  max-width:700px;
-  margin:auto;
-  min-height:100vh;
+max-width:700px;
+margin:auto
 }
+
+button{font-family:inherit}
 
 /* HEADER */
 
-.top{
-  height:88px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 16px;
-  background:#202020;
-  border-bottom:1px solid #444;
+.header{
+height:82px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 18px;
+background:#202020;
+border-bottom:1px solid #3d3d3d
 }
 
-.close,.menu{
-  background:#111;
-  border-radius:30px;
-  padding:12px 16px;
-  font-size:24px;
+.close,.more{
+background:#111;
+color:white;
+border:0;
+border-radius:35px;
+padding:13px 18px;
+font-size:27px
 }
 
-.close span{
-  font-size:15px;
-  vertical-align:3px;
+.close small{
+font-size:16px;
+vertical-align:3px
 }
 
-.brand{
-  font-size:25px;
-  font-weight:800;
+.logo{
+font-size:25px;
+font-weight:bold
+}
+
+.more{
+letter-spacing:4px
 }
 
 /* BALANCE */
 
 .balance{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:18px 28px 24px;
-  background:#202020;
+display:flex;
+align-items:center;
+gap:15px;
+padding:22px 30px;
+background:#202020
 }
 
-.profile{
-  width:78px;
-  height:78px;
-  border-radius:50%;
-  border:3px solid var(--purple);
-  display:grid;
-  place-items:center;
-  background:#111;
-  font-size:38px;
+.avatar{
+width:82px;
+height:82px;
+border:3px solid #8b5cf6;
+border-radius:50%;
+display:grid;
+place-items:center;
+font-size:42px;
+background:#111
 }
 
-.balance-text{
-  flex:1;
+.balance-info{
+flex:1
 }
 
-.balance-text small{
-  display:block;
-  color:#999;
-  font-size:18px;
-  margin-bottom:7px;
+.balance-info span{
+display:block;
+font-size:18px;
+color:#999;
+margin-bottom:7px
 }
 
-.balance-text strong{
-  font-size:34px;
+.balance-info b{
+font-size:34px
 }
 
 .deposit{
-  border:0;
-  border-radius:17px;
-  padding:18px 25px;
-  background:linear-gradient(135deg,#9b72ff,#7651d9);
-  color:white;
-  font-size:21px;
-  font-weight:bold;
+border:0;
+background:linear-gradient(135deg,#9b6cff,#7549dc);
+color:white;
+font-size:20px;
+font-weight:bold;
+padding:18px 22px;
+border-radius:17px
 }
 
 /* LIVE */
 
 .live{
-  padding:25px 18px 15px;
-  background:#171717;
+display:flex;
+padding:25px 18px 20px;
+gap:12px;
+background:#171717
 }
 
-.live-title{
-  writing-mode:vertical-rl;
-  transform:rotate(180deg);
-  float:left;
-  font-size:23px;
-  font-weight:bold;
-  margin-right:10px;
+.live-label{
+width:45px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+font-size:24px
 }
 
-.live-title span{
-  display:inline-block;
-  width:14px;
-  height:14px;
-  background:#20a852;
-  border-radius:50%;
-  margin-bottom:8px;
+.live-label b{
+writing-mode:vertical-rl;
+transform:rotate(180deg)
 }
 
-.live-items{
-  display:flex;
-  gap:8px;
-  overflow:hidden;
+.live-label i{
+width:14px;
+height:14px;
+border-radius:50%;
+background:#20a84b;
+margin-bottom:8px
 }
 
-.live-items div{
-  flex:0 0 88px;
-  height:88px;
-  display:grid;
-  place-items:center;
-  border-radius:14px;
-  background:linear-gradient(135deg,#29b6f6,#1976d2);
-  font-size:40px;
+.live-list{
+display:flex;
+gap:10px;
+overflow:hidden;
+flex:1
 }
 
-/* MAIN */
-
-main{
-  padding:10px 15px 25px;
+.live-list div{
+min-width:88px;
+height:88px;
+border-radius:15px;
+display:grid;
+place-items:center;
+font-size:42px;
+background:linear-gradient(135deg,#24aef0,#1687d3)
 }
 
 /* BANNERS */
 
-.banner{
-  min-height:185px;
-  border-radius:28px;
-  margin:15px 0;
-  padding:30px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  overflow:hidden;
-  position:relative;
+main{
+padding:8px 28px 30px
 }
 
-.banner h2{
-  font-size:38px;
-  margin:20px 0 0;
+.hero-card{
+height:185px;
+border-radius:30px;
+margin:18px 0;
+padding:28px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+overflow:hidden
 }
 
-.banner small{
-  background:white;
-  color:#6385a5;
-  padding:10px 15px;
-  border-radius:12px;
-  font-size:17px;
-  font-weight:bold;
+.hero-card label{
+background:white;
+color:#6482a2;
+padding:10px 15px;
+border-radius:12px;
+font-weight:bold;
+font-size:17px
+}
+
+.hero-card h1{
+font-size:37px;
+margin:25px 0 0
 }
 
 .rocket{
-  background:linear-gradient(120deg,#4c9ee8,#75b5ee);
+background:linear-gradient(120deg,#4999e4,#76b9ef)
 }
 
-.rocket-icon{
-  font-size:90px;
-  transform:rotate(-12deg);
+.hero-image{
+font-size:85px;
+transform:rotate(-12deg)
 }
 
 .pvp{
-  background:linear-gradient(120deg,#ffae00,#ffce4a);
+background:linear-gradient(120deg,#ffab00,#ffca42)
 }
 
-.players{
-  display:flex;
-  gap:7px;
-  align-items:stretch;
+.pvp-title{
+font-size:37px
 }
 
-.players div{
-  background:#3b3931aa;
-  border-radius:12px;
-  padding:25px 8px;
-  min-width:75px;
-  text-align:center;
-  font-size:12px;
+.pvp-users{
+display:flex;
+gap:8px
 }
 
-.players b{
-  display:block;
-  margin-top:8px;
-  font-size:17px;
+.pvp-users div{
+background:#51482f;
+border-radius:14px;
+padding:20px 9px;
+min-width:70px;
+text-align:center;
+font-size:12px
+}
+
+.pvp-users strong{
+display:block;
+font-size:17px;
+margin-top:10px
 }
 
 .play{
-  background:linear-gradient(120deg,#4e0aa8,#7c22d9);
+background:linear-gradient(120deg,#4a079d,#7825d4)
 }
 
-.games{
-  font-size:48px;
+.play h1{
+margin-top:22px
+}
+
+.play-games{
+font-size:45px
 }
 
 /* FREE */
 
 .free-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-  margin-top:25px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+margin-top:20px
 }
 
 .free-card{
-  height:310px;
-  border:2px solid #8b5cf6;
-  border-radius:30px;
-  background:radial-gradient(circle,#383838,#171717);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
+height:300px;
+border-radius:30px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:#202020
 }
 
-.free-card:first-child{
-  border-color:#f5c400;
-}
-
-.free-art{
-  font-size:75px;
-  margin-bottom:25px;
+.free-card div{
+font-size:75px;
+margin-bottom:20px
 }
 
 .free-card b{
-  font-size:30px;
-  font-style:italic;
+font-size:32px;
+font-style:italic
 }
 
-/* CONTRACTS */
-
-.contracts{
-  margin-top:30px;
+.free-card span{
+color:#999;
+margin-top:8px
 }
+
+.gold{
+border:2px solid #e6bd28
+}
+
+.purple{
+border:2px solid #8b5cf6
+}
+
+/* CONTRACT */
 
 .contracts h2{
-  font-size:27px;
-  margin:20px 5px;
+font-size:27px;
+margin:30px 0 15px
 }
 
-.contract-card{
-  background:#111827;
-  border:1px solid #303b56;
-  border-radius:25px;
-  padding:22px;
+.contract{
+background:#111827;
+border:1px solid #303b56;
+border-radius:25px;
+padding:22px
 }
 
-.contract-row{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  font-size:18px;
+.contract>div:first-child{
+display:flex;
+flex-direction:column;
+gap:10px
 }
 
-.contract-card p{
-  color:#999;
+.contract b{
+font-size:21px
 }
 
-.progress{
-  height:9px;
-  background:#30394d;
-  border-radius:10px;
-  overflow:hidden;
+.contract span{
+color:#999
 }
 
-.progress i{
-  display:block;
-  width:35%;
-  height:100%;
-  background:linear-gradient(90deg,#8b5cf6,#4f8cff);
+.contract>strong{
+float:right;
+margin-top:-42px;
+font-size:18px
 }
 
-/* HIDDEN */
-
-.hidden{
-  display:none!important;
+.bar{
+height:9px;
+background:#30394d;
+border-radius:10px;
+overflow:hidden;
+margin-top:20px
 }
 
-/* BOTTOM NAV */
+.bar i{
+display:block;
+width:35%;
+height:100%;
+background:linear-gradient(90deg,#8b5cf6,#4f8cff)
+}
+
+/* NAV */
 
 .nav{
-  position:fixed;
-  bottom:0;
-  left:50%;
-  transform:translateX(-50%);
-  width:100%;
-  max-width:700px;
-  height:88px;
-  background:#202020;
-  border-top:1px solid #444;
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  z-index:100;
+position:fixed;
+bottom:0;
+left:50%;
+transform:translateX(-50%);
+width:100%;
+max-width:700px;
+height:88px;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+background:#202020;
+border-top:1px solid #444;
+z-index:100
 }
 
 .nav button{
-  border:0;
-  background:transparent;
-  color:#aaa;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:5px;
-  font-size:25px;
+border:0;
+background:none;
+color:#999;
+font-size:25px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:5px
 }
 
 .nav button span{
-  font-size:13px;
-  font-weight:bold;
+font-size:13px;
+font-weight:bold
 }
 
-.nav .active{
-  color:white;
+.nav .home{
+background:#8b5cf6;
+color:white;
+margin:8px;
+border-radius:20px;
+box-shadow:0 0 25px #8b5cf688
 }
+
+.hidden{display:none!important}
 
 @media(max-width:500px){
 
-  .brand{
-    font-size:22px;
-  }
+main{
+padding-left:28px;
+padding-right:28px
+}
 
-  .balance{
-    padding-left:18px;
-    padding-right:18px;
-  }
+.logo{
+font-size:23px
+}
 
-  .profile{
-    width:70px;
-    height:70px;
-  }
+.balance{
+padding-left:28px;
+padding-right:28px
+}
 
-  .balance-text strong{
-    font-size:27px;
-  }
+.balance-info b{
+font-size:30px
+}
 
-  .deposit{
-    padding:16px 18px;
-    font-size:17px;
-  }
+.deposit{
+font-size:18px;
+padding:17px 18px
+}
 
-  .banner{
-    min-height:175px;
-    padding:24px;
-  }
+.hero-card{
+height:185px;
+padding:25px
+}
 
-  .banner h2{
-    font-size:32px;
-  }
+.hero-card h1{
+font-size:34px
+}
 
-  .rocket-icon{
-    font-size:65px;
-  }
+.hero-image{
+font-size:70px
+}
 
-  .players div{
-    min-width:62px;
-    padding:20px 5px;
-  }
+.pvp-users div{
+min-width:65px
+}
 
-  .games{
-    font-size:35px;
-  }
+.free-card{
+height:280px
+}
 
-  .free-card{
-    height:270px;
-  }
-
-  .free-art{
-    font-size:60px;
-  }
-
-  .free-card b{
-    font-size:25px;
-  }
+.free-card div{
+font-size:62px
+}
 }
