@@ -30,13 +30,11 @@ button{
   max-width:520px;
   min-height:100vh;
   margin:0 auto;
-  padding:0 12px 100px;
+  padding:0 12px 120px;
   background:#111113;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 .topbar{
   height:68px;
@@ -82,16 +80,14 @@ button{
   box-shadow:0 5px 18px rgba(116,62,238,.32);
 }
 
-/* =========================
-   BALANCE
-========================= */
+/* BALANCE */
 
 .balance{
   min-height:68px;
   display:flex;
   align-items:center;
   gap:10px;
-  padding:9px 9px;
+  padding:9px;
   background:#1b1b1e;
   border:1px solid rgba(255,255,255,.035);
   border-radius:18px;
@@ -106,16 +102,8 @@ button{
   position:relative;
   overflow:hidden;
   background:
-    radial-gradient(
-      circle at 50% 30%,
-      #d6c4ff 0 16%,
-      transparent 17%
-    ),
-    radial-gradient(
-      ellipse at 50% 78%,
-      #9a61ff 0 31%,
-      transparent 32%
-    ),
+    radial-gradient(circle at 50% 30%,#d6c4ff 0 16%,transparent 17%),
+    radial-gradient(ellipse at 50% 78%,#9a61ff 0 31%,transparent 32%),
     #35205d;
   border:2px solid #8146ff;
   box-shadow:0 0 0 3px rgba(129,70,255,.08);
@@ -138,7 +126,6 @@ button{
 .balance-info strong{
   font-size:16px;
   line-height:1;
-  letter-spacing:-.2px;
 }
 
 .balance-info strong i{
@@ -158,9 +145,7 @@ button{
   box-shadow:0 5px 15px rgba(111,57,222,.22);
 }
 
-/* =========================
-   LIVE
-========================= */
+/* LIVE */
 
 .live-section{
   margin-top:13px;
@@ -213,6 +198,23 @@ button{
   border-radius:9px;
   background:linear-gradient(145deg,#8250ff,#bd7cff);
   box-shadow:0 4px 12px rgba(0,0,0,.25);
+  animation:liveFloat 2.8s ease-in-out infinite;
+}
+
+.live-item:nth-child(2)::after{
+  animation-delay:.3s;
+}
+
+.live-item:nth-child(3)::after{
+  animation-delay:.6s;
+}
+
+.live-item:nth-child(4)::after{
+  animation-delay:.9s;
+}
+
+.live-item:nth-child(5)::after{
+  animation-delay:1.2s;
 }
 
 .live-item.ton::after{
@@ -232,18 +234,14 @@ button{
   background:linear-gradient(145deg,#ff4b9e,#744cff);
 }
 
-/* =========================
-   MAIN
-========================= */
+/* MAIN */
 
 main{
   margin-top:13px;
   padding-bottom:18px;
 }
 
-/* =========================
-   GENERAL BANNERS
-========================= */
+/* BANNERS */
 
 .banner{
   position:relative;
@@ -269,23 +267,13 @@ main{
   font-weight:900;
 }
 
-/* =========================
-   ROCKET
-========================= */
+/* ROCKET */
 
 .rocket-banner{
   min-height:145px;
   background:
-    radial-gradient(
-      circle at 82% 45%,
-      rgba(74,185,255,.42),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 20% 100%,
-      rgba(40,116,220,.3),
-      transparent 40%
-    ),
+    radial-gradient(circle at 82% 45%,rgba(74,185,255,.42),transparent 30%),
+    radial-gradient(circle at 20% 100%,rgba(40,116,220,.3),transparent 40%),
     linear-gradient(135deg,#123b82,#0e6ed0);
 }
 
@@ -293,7 +281,6 @@ main{
   margin-top:10px;
   font-size:20px;
   font-weight:900;
-  letter-spacing:-.5px;
 }
 
 .rocket-art{
@@ -319,6 +306,7 @@ main{
   color:#1373d7;
   font-size:29px;
   box-shadow:0 10px 28px rgba(0,0,0,.3);
+  animation:rocketFloat 3s ease-in-out infinite;
 }
 
 .mult{
@@ -329,6 +317,7 @@ main{
   border:1px solid rgba(255,255,255,.06);
   font-size:8px;
   font-weight:900;
+  animation:multPulse 2s ease-in-out infinite;
 }
 
 .m1{
@@ -339,30 +328,22 @@ main{
 .m2{
   right:4px;
   top:49px;
+  animation-delay:.35s;
 }
 
 .m3{
   left:0;
   top:66px;
+  animation-delay:.7s;
 }
 
-/* =========================
-   PVP
-========================= */
+/* PVP */
 
 .pvp-banner{
   min-height:147px;
   background:
-    radial-gradient(
-      circle at 50% 15%,
-      rgba(255,255,255,.24),
-      transparent 34%
-    ),
-    radial-gradient(
-      circle at 15% 100%,
-      rgba(255,173,25,.28),
-      transparent 42%
-    ),
+    radial-gradient(circle at 50% 15%,rgba(255,255,255,.24),transparent 34%),
+    radial-gradient(circle at 15% 100%,rgba(255,173,25,.28),transparent 42%),
     linear-gradient(135deg,#f4cb2d,#e99a16);
   color:#17120a;
 }
@@ -371,7 +352,6 @@ main{
   margin-bottom:10px;
   font-size:20px;
   font-weight:1000;
-  letter-spacing:-.5px;
 }
 
 .players{
@@ -388,6 +368,15 @@ main{
   text-align:center;
   background:rgba(255,255,255,.18);
   border:1px solid rgba(255,255,255,.13);
+  animation:playerFloat 3.2s ease-in-out infinite;
+}
+
+.player:nth-child(2){
+  animation-delay:.3s;
+}
+
+.player:nth-child(3){
+  animation-delay:.6s;
 }
 
 .active-player{
@@ -407,6 +396,7 @@ main{
     linear-gradient(145deg,#4b2d1c,#d8a36a);
   border:2px solid rgba(0,0,0,.25);
   box-shadow:0 4px 9px rgba(0,0,0,.16);
+  animation:avatarPulse 2.5s ease-in-out infinite;
 }
 
 .player-img.two{
@@ -433,23 +423,13 @@ main{
   font-weight:1000;
 }
 
-/* =========================
-   PLAY HUB
-========================= */
+/* PLAY HUB */
 
 .play-banner{
   min-height:132px;
   background:
-    radial-gradient(
-      circle at 82% 45%,
-      rgba(222,119,255,.42),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at 10% 100%,
-      rgba(96,35,187,.35),
-      transparent 40%
-    ),
+    radial-gradient(circle at 82% 45%,rgba(222,119,255,.42),transparent 35%),
+    radial-gradient(circle at 10% 100%,rgba(96,35,187,.35),transparent 40%),
     linear-gradient(135deg,#5c1eb1,#9b38dc);
 }
 
@@ -457,7 +437,6 @@ main{
   margin-top:10px;
   font-size:19px;
   font-weight:900;
-  letter-spacing:-.4px;
 }
 
 .games{
@@ -479,6 +458,15 @@ main{
   font-size:20px;
   font-weight:900;
   box-shadow:0 6px 16px rgba(0,0,0,.18);
+  animation:gameFloat 2.4s ease-in-out infinite;
+}
+
+.game:nth-child(2){
+  animation-delay:.25s;
+}
+
+.game:nth-child(3){
+  animation-delay:.5s;
 }
 
 .game.green{
@@ -493,117 +481,93 @@ main{
   background:#247ed9;
 }
 
-/* =========================
-   FREE CARDS
-========================= */
+/* BOX CARDS */
 
-.free-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:11px;
-  padding-bottom:10px;
+.gift-box-card{
+  isolation:isolate;
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    filter .25s ease;
 }
 
-.free-card{
-  position:relative;
-  min-height:166px;
-  overflow:hidden;
-  border-radius:21px;
-  padding:15px;
-  background:#202023;
-  border:1px solid rgba(255,255,255,.05);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.035),
-    0 8px 22px rgba(0,0,0,.2);
-}
-
-.free24{
-  background:
-    radial-gradient(
-      circle at 50% 78%,
-      rgba(255,184,53,.32),
-      transparent 37%
-    ),
-    linear-gradient(145deg,#29292c,#1b1b1d);
-}
-
-.free{
-  background:
-    radial-gradient(
-      circle at 50% 78%,
-      rgba(124,66,255,.4),
-      transparent 38%
-    ),
-    linear-gradient(145deg,#29272f,#1b1b1d);
-}
-
-.free-title{
-  position:relative;
-  z-index:2;
-  font-size:19px;
-  font-weight:1000;
-  letter-spacing:-.4px;
-}
-
-.free-title span{
-  color:#ffb62e;
-}
-
-.ring,
-.free-art{
+.gift-box-card::before{
+  content:"";
   position:absolute;
-  left:50%;
-  bottom:18px;
-  transform:translateX(-50%);
-  width:79px;
-  height:79px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  font-size:26px;
-  box-shadow:0 10px 28px rgba(0,0,0,.4);
-}
-
-.ring{
+  inset:-40%;
+  z-index:-1;
   background:
     radial-gradient(
       circle,
-      #ffcf58 0 17%,
-      #ff8d24 18% 35%,
-      #593a1c 36% 52%,
-      #252529 53%
+      rgba(255,255,255,.16),
+      transparent 32%
     );
+  opacity:.25;
+  animation:boxGlow 4s ease-in-out infinite;
 }
 
-.free-art{
-  background:
-    radial-gradient(
-      circle,
-      #c494ff 0 17%,
-      #7741e5 18% 40%,
-      #332058 41% 60%,
-      #252529 61%
-    );
+.gift-box-card:hover{
+  transform:translateY(-5px);
 }
 
-/* =========================
-   BOTTOM NAV
-========================= */
+.gift-box-card:active{
+  transform:scale(.96);
+}
+
+.box-art{
+  animation:
+    giftFloat 2.8s ease-in-out infinite,
+    giftGlow 2.8s ease-in-out infinite;
+  transform-origin:center;
+}
+
+.gift-box-card:nth-child(2) .box-art{
+  animation-delay:.35s;
+}
+
+.gift-box-card:nth-child(3) .box-art{
+  animation:
+    heartFloat 1.6s ease-in-out infinite,
+    giftGlow 2.2s ease-in-out infinite;
+}
+
+.gift-box-card:nth-child(4) .box-art{
+  animation:
+    ringSpin 4.5s ease-in-out infinite,
+    giftGlow 2.5s ease-in-out infinite;
+}
+
+.gift-box-card:nth-child(5) .box-art{
+  animation:
+    crownFloat 2.5s ease-in-out infinite,
+    giftGlow 2.5s ease-in-out infinite;
+}
+
+.gift-box-card:nth-child(6) .box-art{
+  animation:
+    diamondFloat 2.4s ease-in-out infinite,
+    diamondShine 2.4s ease-in-out infinite;
+}
+
+.box-tag{
+  animation:tagPulse 2.5s ease-in-out infinite;
+}
+
+/* BOTTOM NAV */
 
 .bottom-nav{
   position:fixed;
   z-index:20;
   left:50%;
-  bottom:8px;
+  bottom:7px;
   transform:translateX(-50%);
   width:calc(100% - 20px);
   max-width:496px;
-  height:67px;
+  height:58px;
   display:grid;
   grid-template-columns:repeat(5,1fr);
-  padding:5px;
-  border-radius:19px;
+  padding:4px;
+  border-radius:18px;
   background:rgba(31,31,34,.97);
   border:1px solid rgba(255,255,255,.045);
   box-shadow:
@@ -614,25 +578,26 @@ main{
 
 .bottom-nav button{
   min-width:0;
-  min-height:54px;
+  min-height:48px;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:3px;
+  gap:2px;
   background:transparent;
-  border-radius:14px;
+  border-radius:13px;
   color:#77777f;
-  font-size:8px;
+  font-size:7px;
   font-weight:800;
 }
 
 .bottom-nav button div{
-  font-size:18px;
-  line-height:19px;
+  font-size:16px;
+  line-height:17px;
 }
 
 .bottom-nav button.active{
+  min-height:50px;
   color:#fff;
   background:linear-gradient(145deg,#7944df,#6431c5);
   box-shadow:
@@ -640,9 +605,7 @@ main{
     inset 0 1px 0 rgba(255,255,255,.1);
 }
 
-/* =========================
-   PANELS
-========================= */
+/* PANELS */
 
 .epic-panel{
   -webkit-backdrop-filter:blur(5px);
@@ -673,16 +636,159 @@ main{
   color:#fff;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* ANIMATIONS */
+
+@keyframes giftFloat{
+  0%,100%{
+    transform:translateX(-50%) translateY(0) rotate(-2deg);
+  }
+  50%{
+    transform:translateX(-50%) translateY(-9px) rotate(2deg);
+  }
+}
+
+@keyframes giftGlow{
+  0%,100%{
+    filter:brightness(1);
+    box-shadow:0 10px 28px rgba(0,0,0,.4);
+  }
+  50%{
+    filter:brightness(1.14);
+    box-shadow:
+      0 10px 32px rgba(140,80,255,.28),
+      0 0 22px rgba(140,80,255,.12);
+  }
+}
+
+@keyframes heartFloat{
+  0%,100%{
+    transform:translateX(-50%) scale(1);
+  }
+  50%{
+    transform:translateX(-50%) scale(1.08);
+  }
+}
+
+@keyframes ringSpin{
+  0%,100%{
+    transform:translateX(-50%) rotate(-4deg);
+  }
+  50%{
+    transform:translateX(-50%) rotate(7deg);
+  }
+}
+
+@keyframes crownFloat{
+  0%,100%{
+    transform:translateX(-50%) translateY(0) rotate(-2deg);
+  }
+  50%{
+    transform:translateX(-50%) translateY(-8px) rotate(2deg);
+  }
+}
+
+@keyframes diamondFloat{
+  0%,100%{
+    transform:translateX(-50%) translateY(0) rotate(-3deg);
+  }
+  50%{
+    transform:translateX(-50%) translateY(-8px) rotate(3deg);
+  }
+}
+
+@keyframes diamondShine{
+  0%,100%{
+    filter:brightness(1);
+  }
+  50%{
+    filter:brightness(1.35);
+  }
+}
+
+@keyframes boxGlow{
+  0%,100%{
+    transform:scale(.9);
+    opacity:.15;
+  }
+  50%{
+    transform:scale(1.05);
+    opacity:.32;
+  }
+}
+
+@keyframes tagPulse{
+  0%,100%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.04);
+  }
+}
+
+@keyframes rocketFloat{
+  0%,100%{
+    transform:rotate(25deg) translateY(0);
+  }
+  50%{
+    transform:rotate(25deg) translateY(-8px);
+  }
+}
+
+@keyframes multPulse{
+  0%,100%{
+    transform:scale(1);
+    opacity:.8;
+  }
+  50%{
+    transform:scale(1.08);
+    opacity:1;
+  }
+}
+
+@keyframes playerFloat{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-3px);
+  }
+}
+
+@keyframes avatarPulse{
+  0%,100%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.05);
+  }
+}
+
+@keyframes gameFloat{
+  0%,100%{
+    transform:translateY(0) rotate(0);
+  }
+  50%{
+    transform:translateY(-6px) rotate(2deg);
+  }
+}
+
+@keyframes liveFloat{
+  0%,100%{
+    transform:translate(-50%,-50%) translateY(0);
+  }
+  50%{
+    transform:translate(-50%,-50%) translateY(-5px);
+  }
+}
+
+/* MOBILE */
 
 @media(max-width:380px){
 
   .app{
     padding-left:9px;
     padding-right:9px;
-    padding-bottom:104px;
+    padding-bottom:120px;
   }
 
   .topbar{
@@ -736,35 +842,16 @@ main{
     width:calc(100% - 14px);
   }
 }
-/* FIX BOTTOM NAV */
 
-.bottom-nav{
-  height:58px;
-  bottom:7px;
-  padding:4px;
-  border-radius:18px;
-}
+/* REDUCE MOTION */
 
-.bottom-nav button{
-  min-height:48px;
-  gap:2px;
-  font-size:7px;
-  border-radius:13px;
-}
+@media(prefers-reduced-motion:reduce){
 
-.bottom-nav button div{
-  font-size:16px;
-  line-height:17px;
-}
-
-.bottom-nav button.active{
-  min-height:50px;
-}
-
-.app{
-  padding-bottom:120px;
-}
-
-.free-grid{
-  padding-bottom:18px;
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition:none !important;
+  }
 }
