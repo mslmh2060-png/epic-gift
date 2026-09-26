@@ -1,425 +1,269 @@
 *{box-sizing:border-box}
 
 :root{
---bg:#191919;
---dark:#202020;
---card:#242424;
---purple:#8b5cf6;
---white:#fff;
---gray:#999
+  --bg:#191919;
+  --dark:#202020;
+  --card:#242424;
+  --purple:#8b5cf6;
+  --purple2:#6d28d9;
+  --blue:#3b82f6;
+  --yellow:#facc15;
+  --white:#fff;
+  --gray:#999;
 }
 
 html,body{
-margin:0;
-background:var(--bg);
-color:white;
-font-family:Arial,"Segoe UI",sans-serif
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:white;
+  font-family:Arial,"Segoe UI",sans-serif;
 }
 
 body{
-padding-bottom:90px;
-overflow-x:hidden
+  padding-bottom:90px;
+  overflow-x:hidden;
+}
+
+button{
+  font-family:inherit;
+  border:0;
+  cursor:pointer;
 }
 
 #app{
-max-width:700px;
-margin:auto
+  width:100%;
+  max-width:700px;
+  margin:auto;
+  min-height:100vh;
 }
-
-button{font-family:inherit}
 
 /* HEADER */
 
 .header{
-height:82px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 18px;
-background:#202020;
-border-bottom:1px solid #3d3d3d
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 12px;
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:#191919;
 }
 
-.close,.more{
-background:#111;
-color:white;
-border:0;
-border-radius:35px;
-padding:13px 18px;
-font-size:27px
+.close,
+.more{
+  background:#252525;
+  color:white;
+  border-radius:12px;
+  padding:9px 13px;
+  font-size:16px;
 }
 
 .close small{
-font-size:16px;
-vertical-align:3px
+  font-size:12px;
+  color:#aaa;
 }
 
 .logo{
-font-size:25px;
-font-weight:bold
+  font-size:20px;
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.logo b{
+  font-weight:800;
 }
 
 .more{
-letter-spacing:4px
+  font-size:19px;
 }
 
 /* BALANCE */
 
 .balance{
-display:flex;
-align-items:center;
-gap:15px;
-padding:22px 30px;
-background:#202020
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 16px 18px;
 }
 
 .avatar{
-width:82px;
-height:82px;
-border:3px solid #8b5cf6;
-border-radius:50%;
-display:grid;
-place-items:center;
-font-size:42px;
-background:#111
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#292929;
+  border:3px solid var(--purple);
+  font-size:25px;
 }
 
 .balance-info{
-flex:1
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
 }
 
 .balance-info span{
-display:block;
-font-size:18px;
-color:#999;
-margin-bottom:7px
+  color:#999;
+  font-size:13px;
 }
 
 .balance-info b{
-font-size:34px
+  font-size:18px;
 }
 
 .deposit{
-border:0;
-background:linear-gradient(135deg,#9b6cff,#7549dc);
-color:white;
-font-size:20px;
-font-weight:bold;
-padding:18px 22px;
-border-radius:17px
+  background:var(--purple);
+  color:white;
+  border-radius:12px;
+  padding:12px 15px;
+  font-weight:700;
 }
 
 /* LIVE */
 
 .live{
-display:flex;
-padding:25px 18px 20px;
-gap:12px;
-background:#171717
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:5px 12px 18px;
 }
 
 .live-label{
-width:45px;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-font-size:24px
-}
-
-.live-label b{
-writing-mode:vertical-rl;
-transform:rotate(180deg)
+  min-width:43px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:3px;
+  font-size:12px;
 }
 
 .live-label i{
-width:14px;
-height:14px;
-border-radius:50%;
-background:#20a84b;
-margin-bottom:8px
+  width:8px;
+  height:8px;
+  background:#22c55e;
+  border-radius:50%;
+  display:block;
+  box-shadow:0 0 8px #22c55e;
 }
 
 .live-list{
-display:flex;
-gap:10px;
-overflow:hidden;
-flex:1
+  display:flex;
+  gap:9px;
+  overflow:hidden;
+  flex:1;
 }
 
 .live-list div{
-min-width:88px;
-height:88px;
-border-radius:15px;
-display:grid;
-place-items:center;
-font-size:42px;
-background:linear-gradient(135deg,#24aef0,#1687d3)
+  min-width:64px;
+  height:64px;
+  border-radius:13px;
+  background:#292929;
+  display:grid;
+  place-items:center;
+  font-size:30px;
+  border:1px solid #353535;
 }
 
-/* BANNERS */
+/* MAIN */
 
 main{
-padding:8px 28px 30px
+  padding:0 12px;
 }
 
 .hero-card{
-height:185px;
-border-radius:30px;
-margin:18px 0;
-padding:28px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-overflow:hidden
+  position:relative;
+  min-height:145px;
+  margin-bottom:13px;
+  border-radius:22px;
+  overflow:hidden;
+  padding:22px;
 }
 
-.hero-card label{
-background:white;
-color:#6482a2;
-padding:10px 15px;
-border-radius:12px;
-font-weight:bold;
-font-size:17px
-}
-
-.hero-card h1{
-font-size:37px;
-margin:25px 0 0
-}
+/* ROCKET */
 
 .rocket{
-background:linear-gradient(120deg,#4999e4,#76b9ef)
+  background:linear-gradient(135deg,#2764e8,#3b82f6);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.hero-text label,
+.play label{
+  display:inline-block;
+  background:#ff334b;
+  padding:5px 9px;
+  border-radius:7px;
+  font-size:11px;
+  font-weight:800;
+  margin-bottom:8px;
+}
+
+.hero-text h1,
+.play h1{
+  margin:0;
+  font-size:28px;
 }
 
 .hero-image{
-font-size:85px;
-transform:rotate(-12deg)
+  font-size:85px;
+  transform:rotate(-10deg);
 }
 
+/* PVP */
+
 .pvp{
-background:linear-gradient(120deg,#ffab00,#ffca42)
+  background:linear-gradient(135deg,#f4bd17,#ffd83d);
+  color:#151515;
+  min-height:155px;
 }
 
 .pvp-title{
-font-size:37px
+  font-size:27px;
+  margin-bottom:20px;
 }
 
 .pvp-users{
-display:flex;
-gap:8px
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
 }
 
 .pvp-users div{
-background:#51482f;
-border-radius:14px;
-padding:20px 9px;
-min-width:70px;
-text-align:center;
-font-size:12px
+  background:rgba(255,255,255,.7);
+  border-radius:14px;
+  padding:10px 7px;
+  min-width:0;
+  flex:1;
+  text-align:center;
+  font-size:11px;
+  font-weight:700;
 }
 
 .pvp-users strong{
-display:block;
-font-size:17px;
-margin-top:10px
+  display:block;
+  font-size:16px;
+  margin-top:4px;
 }
 
+/* PLAY HUB */
+
 .play{
-background:linear-gradient(120deg,#4a079d,#7825d4)
+  background:linear-gradient(135deg,#6927db,#9b5cf6);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .play h1{
-margin-top:22px
+  font-size:25px;
 }
 
 .play-games{
-font-size:45px
-}
-
-/* FREE */
-
-.free-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:18px;
-margin-top:20px
-}
-
-.free-card{
-height:300px;
-border-radius:30px;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-background:#202020
-}
-
-.free-card div{
-font-size:75px;
-margin-bottom:20px
-}
-
-.free-card b{
-font-size:32px;
-font-style:italic
-}
-
-.free-card span{
-color:#999;
-margin-top:8px
-}
-
-.gold{
-border:2px solid #e6bd28
-}
-
-.purple{
-border:2px solid #8b5cf6
-}
-
-/* CONTRACT */
-
-.contracts h2{
-font-size:27px;
-margin:30px 0 15px
-}
-
-.contract{
-background:#111827;
-border:1px solid #303b56;
-border-radius:25px;
-padding:22px
-}
-
-.contract>div:first-child{
-display:flex;
-flex-direction:column;
-gap:10px
-}
-
-.contract b{
-font-size:21px
-}
-
-.contract span{
-color:#999
-}
-
-.contract>strong{
-float:right;
-margin-top:-42px;
-font-size:18px
-}
-
-.bar{
-height:9px;
-background:#30394d;
-border-radius:10px;
-overflow:hidden;
-margin-top:20px
-}
-
-.bar i{
-display:block;
-width:35%;
-height:100%;
-background:linear-gradient(90deg,#8b5cf6,#4f8cff)
-}
-
-/* NAV */
-
-.nav{
-position:fixed;
-bottom:0;
-left:50%;
-transform:translateX(-50%);
-width:100%;
-max-width:700px;
-height:88px;
-display:grid;
-grid-template-columns:repeat(5,1fr);
-background:#202020;
-border-top:1px solid #444;
-z-index:100
-}
-
-.nav button{
-border:0;
-background:none;
-color:#999;
-font-size:25px;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-gap:5px
-}
-
-.nav button span{
-font-size:13px;
-font-weight:bold
-}
-
-.nav .home{
-background:#8b5cf6;
-color:white;
-margin:8px;
-border-radius:20px;
-box-shadow:0 0 25px #8b5cf688
-}
-
-.hidden{display:none!important}
-
-@media(max-width:500px){
-
-main{
-padding-left:28px;
-padding-right:28px
-}
-
-.logo{
-font-size:23px
-}
-
-.balance{
-padding-left:28px;
-padding-right:28px
-}
-
-.balance-info b{
-font-size:30px
-}
-
-.deposit{
-font-size:18px;
-padding:17px 18px
-}
-
-.hero-card{
-height:185px;
-padding:25px
-}
-
-.hero-card h1{
-font-size:34px
-}
-
-.hero-image{
-font-size:70px
-}
-
-.pvp-users div{
-min-width:65px
-}
-
-.free-card{
-height:280px
-}
-
-.free-card div{
-font-size:62px
-}
-}
+  font-size:42
