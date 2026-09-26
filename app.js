@@ -1,16 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const closeBtn = document.querySelector(".close");
-  const menuBtn = document.querySelector(".menu");
-  const depositBtn = document.querySelector(".deposit");
-  const navButtons = document.querySelectorAll(".bottom-nav button");
-
   if (window.Telegram?.WebApp) {
-    window.Telegram.WebApp.ready();
-    window.Telegram.WebApp.expand();
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
   }
 
-  function openPanel(title, text) {
+  const openPanel = (title, text) => {
     document.querySelector(".epic-panel")?.remove();
 
     const panel = document.createElement("div");
@@ -20,206 +15,134 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="epic-panel-box">
         <div class="epic-panel-head">
           <strong>${title}</strong>
-          <button class="epic-panel-close">✕</button>
+          <button class="epic-panel-close">×</button>
         </div>
-
-        <div class="epic-panel-body">
-          ${text}
-        </div>
+        <div class="epic-panel-body">${text}</div>
       </div>
     `;
-
-    Object.assign(panel.style, {
-      position: "fixed",
-      inset: "0",
-      zIndex: "100",
-      background: "rgba(0,0,0,.72)",
-      display: "flex",
-      alignItems: "flex-end",
-      justifyContent: "center",
-      padding: "10px"
-    });
-
-    const box = panel.querySelector(".epic-panel-box");
-
-    Object.assign(box.style, {
-      width: "100%",
-      maxWidth: "520px",
-      background: "#222224",
-      borderRadius: "22px",
-      padding: "16px",
-      boxShadow: "0 15px 50px rgba(0,0,0,.55)"
-    });
 
     panel.querySelector(".epic-panel-close").onclick = () => {
       panel.remove();
     };
 
-    panel.onclick = (e) => {
-      if (e.target === panel) {
-        panel.remove();
-      }
+    panel.onclick = e => {
+      if (e.target === panel) panel.remove();
     };
 
     document.body.appendChild(panel);
-  }
+  };
 
-  closeBtn?.addEventListener("click", () => {
-
+  document.querySelector(".close")?.addEventListener("click", () => {
     if (window.Telegram?.WebApp) {
-      window.Telegram.WebApp.close();
+      Telegram.WebApp.close();
     } else {
       openPanel(
         "Epic Gift",
-        "این دکمه هنگام اجرای Mini App داخل تلگرام عمل می‌کند."
+        "این دکمه داخل Telegram Mini App پنجره را می‌بندد."
       );
     }
-
   });
 
-  menuBtn?.addEventListener("click", () => {
-
+  document.querySelector(".menu")?.addEventListener("click", () => {
     openPanel(
       "Menu",
       `
-      <div style="display:grid;gap:10px">
-
-        <button
-          onclick="alert('Profile')"
-          style="padding:13px;border:0;border-radius:12px;background:#303034;color:white">
-          👤 Profile
-        </button>
-
-        <button
-          onclick="alert('Settings')"
-          style="padding:13px;border:0;border-radius:12px;background:#303034;color:white">
-          ⚙️ Settings
-        </button>
-
-        <button
-          onclick="alert('Help')"
-          style="padding:13px;border:0;border-radius:12px;background:#303034;color:white">
-          ❓ Help
-        </button>
-
-      </div>
+        <div style="display:grid;gap:9px">
+          <button style="padding:14px;border-radius:13px;background:#292930;color:#fff">
+            Profile
+          </button>
+          <button style="padding:14px;border-radius:13px;background:#292930;color:#fff">
+            Settings
+          </button>
+          <button style="padding:14px;border-radius:13px;background:#292930;color:#fff">
+            Support
+          </button>
+        </div>
       `
     );
-
   });
 
-  depositBtn?.addEventListener("click", () => {
-
+  document.querySelector(".deposit")?.addEventListener("click", () => {
     openPanel(
       "Deposit",
-      "اتصال کیف پول و شارژ واقعی در مرحله بعد اضافه می‌شود."
+      "اتصال واقعی TON و Telegram Gifts را در مرحله بک‌اند اضافه می‌کنیم."
     );
+  });
 
+  document.querySelector(".rocket-banner")?.addEventListener("click", () => {
+    openPanel(
+      "Rocket",
+      "Rocket Mode آماده است. سیستم ضریب، شرط و Cash Out در مرحله بعد اضافه می‌شود."
+    );
+  });
+
+  document.querySelector(".pvp-banner")?.addEventListener("click", () => {
+    openPanel(
+      "PvP",
+      "PvP برای بازی مقابل بازیکن‌ها طراحی می‌شود. موجودی و Prize Pool بعداً به بک‌اند وصل می‌شود."
+    );
+  });
+
+  document.querySelector(".play-banner")?.addEventListener("click", () => {
+    openPanel(
+      "Play Hub",
+      "بخش بازی‌ها و حالت‌های مختلف Epic Gift اینجا قرار می‌گیرد."
+    );
+  });
+
+  document.querySelector(".free24")?.addEventListener("click", () => {
+    openPanel(
+      "FREE24",
+      "این باکس برای دریافت جایزه روزانه طراحی شده است."
+    );
+  });
+
+  document.querySelector(".free")?.addEventListener("click", () => {
+    openPanel(
+      "FARM",
+      "Farm Box می‌تواند شامل Giftهای مختلف باشد."
+    );
   });
 
   const navInfo = {
-
     Backpack: [
-      "🎒 Backpack",
-      "اینجا Giftها و آیتم‌های شما نمایش داده می‌شوند."
+      "Backpack",
+      "Giftهای دریافت‌شده و موجودی شما اینجا نمایش داده می‌شود."
     ],
-
     Invite: [
-      "👥 Invite",
-      "اینجا لینک دعوت و پاداش Referral قرار می‌گیرد."
+      "Invite",
+      "لینک Referral و پاداش دعوت دوستان اینجا قرار می‌گیرد."
     ],
-
     Leaderboard: [
-      "🏆 Leaderboard",
-      "رتبه‌بندی بازیکنان اینجا نمایش داده می‌شود."
+      "Leaderboard",
+      "رتبه بازیکنان و جوایز این بخش بعداً به سیستم واقعی متصل می‌شود."
     ],
-
     Earn: [
-      "⚡ Earn",
-      "Taskها و روش‌های دریافت POWER اینجا قرار می‌گیرند."
+      "Earn",
+      "Taskها و POWER قابل دریافت اینجا نمایش داده می‌شوند."
     ]
-
   };
 
-  navButtons.forEach((button) => {
+  document.querySelectorAll(".bottom-nav button").forEach(button => {
 
     button.addEventListener("click", () => {
 
-      navButtons.forEach((item) => {
-        item.classList.remove("active");
-      });
+      document
+        .querySelectorAll(".bottom-nav button")
+        .forEach(item => item.classList.remove("active"));
 
       button.classList.add("active");
 
-      const name =
-        button.querySelector("span")?.textContent;
+      const name = button.querySelector("span")?.textContent;
 
       if (name !== "Home" && navInfo[name]) {
-
         openPanel(
           navInfo[name][0],
           navInfo[name][1]
         );
-
       }
-
     });
 
   });
-
-  document
-    .querySelector(".rocket-banner")
-    ?.addEventListener("click", () => {
-
-      openPanel(
-        "🚀 Rocket",
-        "بخش Rocket اینجا باز می‌شود."
-      );
-
-    });
-
-  document
-    .querySelector(".pvp-banner")
-    ?.addEventListener("click", () => {
-
-      openPanel(
-        "⚔ PVP",
-        "بخش PVP اینجا باز می‌شود."
-      );
-
-    });
-
-  document
-    .querySelector(".play-banner")
-    ?.addEventListener("click", () => {
-
-      openPanel(
-        "🎮 Play Hub",
-        "بخش بازی‌ها اینجا باز می‌شود."
-      );
-
-    });
-
-  document
-    .querySelector(".free24")
-    ?.addEventListener("click", () => {
-
-      openPanel(
-        "🎁 FREE 24H",
-        "پاداش 24 ساعته اینجا دریافت می‌شود."
-      );
-
-    });
-
-  document
-    .querySelector(".free")
-    ?.addEventListener("click", () => {
-
-      openPanel(
-        "🎁 FREE",
-        "پاداش رایگان اینجا دریافت می‌شود."
-      );
-
-    });
 
 });
