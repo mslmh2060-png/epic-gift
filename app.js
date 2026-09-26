@@ -1,14 +1,63 @@
-const tg=window.Telegram?.WebApp;if(tg){tg.ready();tg.expand()}
-let hashes=0;const hashesEl=document.getElementById('hashes');
-setInterval(()=>{hashes+=0.0000015;hashesEl.textContent=hashes.toFixed(8)},1000);
-const page=document.getElementById('page');
-function show(title,html){page.classList.remove('hidden');page.innerHTML='<div class="page-title">'+title+'</div>'+html;page.scrollIntoView({behavior:'smooth',block:'center'})}
-document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{const p=b.dataset.page;if(p==='home'){page.classList.add('hidden');return}
-if(p==='shop')show('SHOP','<p class="muted">Buy POWER and upgrade your mining contracts.</p><button class="primary">Buy 200 POWER</button>');
-if(p==='trophy')show('TROPHY','<p>🏆 Your achievements will appear here.</p>');
-if(p==='team')show('TEAM','<p>Invite friends and earn referral rewards.</p><button class="primary">Invite friends</button>');
-if(p==='earn')show('EARN','<p>Complete tasks to receive POWER.</p><button class="primary">Join @epic_gifto — +500 POWER</button>');
-if(p==='more')show('MORE','<p>Wheel • Daily reward • Settings</p>');
-if(p==='payout')show('PAYOUTS','<p class="muted">Connect your wallet to request a payout.</p>')});
-document.getElementById('freePower').onclick=()=>show('FREE POWER','<p>Complete available tasks to receive free POWER.</p>');
-document.getElementById('swap').onclick=()=>show('SWAP HASHES → GRAM','<p class="muted">Available HASHES: '+hashes.toFixed(8)+'</p><button class="primary">Swap</button>');
+document.addEventListener("DOMContentLoaded", () => {
+  // Header buttons
+  const closeBtn = document.querySelector(".close");
+  const menuBtn = document.querySelector(".menu");
+
+  closeBtn?.addEventListener("click", () => {
+    if (window.Telegram?.WebApp) {
+      window.Telegram.WebApp.close();
+    }
+  });
+
+  menuBtn?.addEventListener("click", () => {
+    alert("Epic Gift menu");
+  });
+
+  // Deposit
+  const depositBtn = document.querySelector(".deposit");
+
+  depositBtn?.addEventListener("click", () => {
+    alert("Deposit will be available soon.");
+  });
+
+  // Bottom navigation
+  const navButtons = document.querySelectorAll(".bottom-nav button");
+
+  navButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      navButtons.forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      button.classList.add("active");
+    });
+  });
+
+  // Banner interactions
+  document.querySelector(".rocket-banner")?.addEventListener("click", () => {
+    alert("Rocket is coming soon!");
+  });
+
+  document.querySelector(".pvp-banner")?.addEventListener("click", () => {
+    alert("PVP is coming soon!");
+  });
+
+  document.querySelector(".play-banner")?.addEventListener("click", () => {
+    alert("Play Hub is coming soon!");
+  });
+
+  // Free cards
+  document.querySelector(".free24")?.addEventListener("click", () => {
+    alert("FREE24 reward is coming soon!");
+  });
+
+  document.querySelector(".free")?.addEventListener("click", () => {
+    alert("FREE reward is coming soon!");
+  });
+
+  // Telegram Mini App
+  if (window.Telegram?.WebApp) {
+    window.Telegram.WebApp.ready();
+    window.Telegram.WebApp.expand();
+  }
+});
