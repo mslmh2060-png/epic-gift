@@ -2,517 +2,203 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <title>Epic Gift</title>
-
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <main class="app">
+<div class="app">
 
-    <!-- HEADER -->
-    <header class="topbar">
+  <header class="topbar">
+    <button class="icon-btn close">×</button>
 
-      <button class="top-button close" aria-label="Close">×</button>
-
-      <div class="brand">
-        <div class="brand-gift">🎁</div>
-        <span>Epic Gift</span>
+    <div class="brand">
+      <div class="brand-art">
+        <div class="brand-gift"></div>
       </div>
+      <div>
+        <div class="brand-name">Epic Gift</div>
+        <div class="brand-sub">GIFTS • GAMES • REWARDS</div>
+      </div>
+    </div>
 
-      <button class="top-button menu" aria-label="Menu">☰</button>
+    <button class="icon-btn menu">•••</button>
+  </header>
 
-    </header>
+  <main>
 
-
-    <!-- BALANCE -->
-    <section class="balance-section">
-
-      <div class="avatar">
-        <div class="avatar-head"></div>
-        <div class="avatar-body"></div>
+    <section class="balance-card">
+      <div class="profile-art">
+        <div class="profile-ring"></div>
+        <div class="profile-face"></div>
       </div>
 
       <div class="balance-info">
-        <div class="balance-label">Your balance</div>
-
-        <div class="balance-value">
-          <span class="ton-icon">◆</span>
-          <strong>0.006</strong>
-        </div>
+        <span>Your balance</span>
+        <strong>0.006</strong>
+        <small>TON</small>
       </div>
 
-      <button class="deposit">
-        Deposit
+      <button class="deposit">Deposit</button>
+    </section>
+
+    <section class="live-section">
+      <div class="section-title">
+        <span class="live-dot"></span>
+        LIVE
+      </div>
+
+      <div class="live-row">
+        <div class="live-card gift-art art-purple"></div>
+        <div class="live-card gift-art art-blue"></div>
+        <div class="live-card gift-art art-pink"></div>
+        <div class="live-card gift-art art-gold"></div>
+        <div class="live-card gift-art art-red"></div>
+      </div>
+    </section>
+
+    <section class="hero-grid">
+
+      <button class="mode-card rocket-banner">
+        <div class="mode-glow"></div>
+        <div class="rocket-art">
+          <div class="rocket-body"></div>
+          <div class="rocket-window"></div>
+          <div class="rocket-flame"></div>
+        </div>
+
+        <div class="mode-copy">
+          <span>PLAY MODE</span>
+          <strong>ROCKET</strong>
+          <small>Cash out before the crash</small>
+        </div>
+
+        <div class="mode-arrow">›</div>
+      </button>
+
+      <button class="mode-card pvp-banner">
+        <div class="pvp-art">
+          <div class="pvp-orb left"></div>
+          <div class="pvp-orb right"></div>
+          <div class="pvp-sword"></div>
+        </div>
+
+        <div class="mode-copy">
+          <span>BATTLE MODE</span>
+          <strong>PVP</strong>
+          <small>Fight for the bank</small>
+        </div>
+
+        <div class="mode-arrow">›</div>
       </button>
 
     </section>
 
-
-    <!-- LIVE -->
-    <section class="live-section">
-
-      <div class="live-title">
-        <span class="live-dot"></span>
-        <span>Live</span>
+    <button class="play-banner">
+      <div class="play-icon">
+        <div class="play-triangle"></div>
       </div>
 
-      <div class="live-cards">
-
-        <div class="live-card">🎁</div>
-        <div class="live-card">💎</div>
-        <div class="live-card">🎟️</div>
-        <div class="live-card">💜</div>
-        <div class="live-card">🔥</div>
-
+      <div>
+        <span>DISCOVER</span>
+        <strong>PLAY HUB</strong>
       </div>
 
-    </section>
+      <div class="play-arrow">›</div>
+    </button>
 
-
-    <!-- ROCKET -->
-    <section class="rocket-banner">
-
-      <div class="rocket-content">
-
-        <span class="hot-badge">HOT</span>
-
-        <h2>Rocket</h2>
-
-        <p>Fly higher & win more</p>
-
-        <div class="multipliers">
-          <span>1.2x</span>
-          <span>2x</span>
-          <span>5x</span>
-        </div>
-
-      </div>
-
-      <div class="rocket-art">
-        🚀
-      </div>
-
-    </section>
-
-
-    <!-- PVP -->
-    <section class="pvp-banner">
-
-      <div class="pvp-heading">
-        <span class="swords">⚔️</span>
-
-        <div>
-          <h2>PVP</h2>
-          <p>Fight other players</p>
-        </div>
-      </div>
-
-
-      <div class="pvp-fight">
-
-        <div class="pvp-player">
-
-          <div class="player-avatar">
-            😎
-          </div>
-
-          <strong>72%</strong>
-
-        </div>
-
-
-        <div class="vs">
-          VS
-        </div>
-
-
-        <div class="pvp-player">
-
-          <div class="player-avatar">
-            👹
-          </div>
-
-          <strong>28%</strong>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- PLAY HUB -->
-    <section class="play-banner">
-
-      <div class="play-left">
-
-        <div class="play-icon">
-          🎮
-        </div>
-
-        <div>
-          <h2>Play Hub</h2>
-          <p>Play games & earn rewards</p>
-        </div>
-
-      </div>
-
-      <div class="play-arrow">
-        ›
-      </div>
-
-    </section>
-
-
-    <!-- GIFT BOXES -->
     <section class="boxes-section">
 
       <div class="section-heading">
-
-        <div>
-          <h2>Gift Boxes</h2>
-          <p>Choose your box</p>
-        </div>
-
-        <span>🎁</span>
-
+        <strong>Gift Boxes</strong>
+        <span>View all</span>
       </div>
 
+      <div class="boxes-grid">
 
-      <div class="gift-box-grid">
-
-
-        <!-- FREE -->
-        <article
-          class="gift-box-card free24"
-          data-box="FREE 24H"
-          data-price="FREE"
-        >
-
-          <span class="box-price free-price">
-            FREE
-          </span>
-
-          <div class="box-glow"></div>
-
-          <div class="box-art">
-            🎁
+        <button class="box-card free24">
+          <div class="box-art free-art">
+            <div class="box-lid"></div>
+            <div class="box-body"></div>
+            <div class="box-ribbon"></div>
           </div>
+          <strong>FREE24</strong>
+          <span>Every 24 hours</span>
+        </button>
 
-          <div class="box-info">
-            <strong>FREE 24H</strong>
-            <span>Every 24 hours</span>
+        <button class="box-card free">
+          <div class="box-art farm-art">
+            <div class="farm-box"></div>
+            <div class="farm-leaf one"></div>
+            <div class="farm-leaf two"></div>
           </div>
+          <strong>FARM</strong>
+          <span>Any gift can drop</span>
+        </button>
 
-        </article>
+        <button class="box-card">
+          <div class="gift-object heart-object"></div>
+          <strong>HEART</strong>
+          <span>Special collection</span>
+        </button>
 
+        <button class="box-card">
+          <div class="gift-object ring-object"></div>
+          <strong>RING</strong>
+          <span>Rare gifts</span>
+        </button>
 
-        <!-- FARM -->
-        <article
-          class="gift-box-card"
-          data-box="FARM"
-          data-price="0.1 TON"
-        >
+        <button class="box-card">
+          <div class="gift-object crown-object"></div>
+          <strong>VIP</strong>
+          <span>Premium rewards</span>
+        </button>
 
-          <span class="box-price">
-            0.1 TON
-          </span>
-
-          <div class="box-glow"></div>
-
-          <div class="box-art">
-            🌾
-          </div>
-
-          <div class="box-info">
-            <strong>FARM</strong>
-            <span>0.1 TON</span>
-          </div>
-
-        </article>
-
-
-        <!-- HEART -->
-        <article
-          class="gift-box-card"
-          data-box="HEART"
-          data-price="1 TON"
-        >
-
-          <span class="box-price">
-            1 TON
-          </span>
-
-          <div class="box-glow"></div>
-
-          <div class="box-art">
-            ❤️
-          </div>
-
-          <div class="box-info">
-            <strong>HEART</strong>
-            <span>1 TON</span>
-          </div>
-
-        </article>
-
-
-        <!-- RING -->
-        <article
-          class="gift-box-card"
-          data-box="RING"
-          data-price="TON"
-        >
-
-          <span class="box-price">
-            TON
-          </span>
-
-          <div class="box-glow"></div>
-
-          <div class="box-art">
-            💍
-          </div>
-
-          <div class="box-info">
-            <strong>RING</strong>
-            <span>Epic Gift</span>
-          </div>
-
-        </article>
-
-
-        <!-- VIP -->
-        <article
-          class="gift-box-card"
-          data-box="VIP"
-          data-price="100 TON"
-        >
-
-          <span class="box-price">
-            100 TON
-          </span>
-
-          <div class="box-glow"></div>
-
-          <div class="box-art">
-            👑
-          </div>
-
-          <div class="box-info">
-            <strong>VIP</strong>
-            <span>100 TON</span>
-          </div>
-
-        </article>
-
-
-        <!-- ELITE -->
-        <article
-          class="gift-box-card"
-          data-box="ELITE"
-          data-price="250 TON"
-        >
-
-          <span class="box-price">
-            250 TON
-          </span>
-
-          <div class="box-glow"></div>
-
-          <div class="box-art">
-            💎
-          </div>
-
-          <div class="box-info">
-            <strong>ELITE</strong>
-            <span>250 TON</span>
-          </div>
-
-        </article>
+        <button class="box-card">
+          <div class="gift-object gem-object"></div>
+          <strong>ELITE</strong>
+          <span>High value drops</span>
+        </button>
 
       </div>
-
     </section>
-
-
-    <!-- BOTTOM NAV -->
-    <nav class="bottom-nav">
-
-      <button>
-        <span>🎒</span>
-        <small>Backpack</small>
-      </button>
-
-      <button>
-        <span>👥</span>
-        <small>Invite</small>
-      </button>
-
-      <button class="active">
-        <span>🏠</span>
-        <small>Home</small>
-      </button>
-
-      <button>
-        <span>🏆</span>
-        <small>Leaderboard</small>
-      </button>
-
-      <button>
-        <span>⚡</span>
-        <small>Earn</small>
-      </button>
-
-    </nav>
 
   </main>
 
+  <nav class="bottom-nav">
 
-  <!-- BOX POPUP -->
-  <div id="boxPopup" class="box-popup">
+    <button>
+      <div class="nav-icon backpack-icon"></div>
+      <span>Backpack</span>
+    </button>
 
-    <div class="box-popup-card">
+    <button>
+      <div class="nav-icon invite-icon"></div>
+      <span>Invite</span>
+    </button>
 
-      <div class="popup-header">
+    <button class="active">
+      <div class="nav-icon home-icon"></div>
+      <span>Home</span>
+    </button>
 
-        <strong id="popupTitle">
-          Gift Box
-        </strong>
+    <button>
+      <div class="nav-icon leaderboard-icon"></div>
+      <span>Leaderboard</span>
+    </button>
 
-        <button id="popupClose">
-          ×
-        </button>
+    <button>
+      <div class="nav-icon earn-icon"></div>
+      <span>Earn</span>
+    </button>
 
-      </div>
+  </nav>
 
+</div>
 
-      <div class="popup-content">
-
-        <div id="popupEmoji" class="popup-emoji">
-          🎁
-        </div>
-
-        <p id="popupPrice">
-          Gift Box
-        </p>
-
-        <button id="openBoxButton">
-          OPEN BOX
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <script src="app.js?v=2"></script>
-
-
-  <!-- BOX SCRIPT -->
-  <script>
-
-    document.addEventListener("DOMContentLoaded", () => {
-
-      const popup = document.getElementById("boxPopup");
-      const popupTitle = document.getElementById("popupTitle");
-      const popupPrice = document.getElementById("popupPrice");
-      const popupEmoji = document.getElementById("popupEmoji");
-      const popupClose = document.getElementById("popupClose");
-      const openBoxButton = document.getElementById("openBoxButton");
-
-      let selectedBox = "";
-
-      const emojis = {
-        "FREE 24H": "🎁",
-        "FARM": "🌾",
-        "HEART": "❤️",
-        "RING": "💍",
-        "VIP": "👑",
-        "ELITE": "💎"
-      };
-
-
-      document.querySelectorAll(".gift-box-card").forEach(card => {
-
-        card.addEventListener("click", () => {
-
-          selectedBox = card.dataset.box || "Gift Box";
-
-          const price = card.dataset.price || "";
-
-          popupTitle.textContent = selectedBox;
-
-          popupEmoji.textContent =
-            emojis[selectedBox] || "🎁";
-
-          if (price === "FREE") {
-
-            popupPrice.textContent =
-              "Free reward — once every 24 hours";
-
-            openBoxButton.textContent =
-              "CLAIM FREE GIFT";
-
-          } else {
-
-            popupPrice.textContent =
-              "Price: " + price;
-
-            openBoxButton.textContent =
-              "OPEN BOX";
-
-          }
-
-          popup.classList.add("show");
-
-        });
-
-      });
-
-
-      popupClose.addEventListener("click", () => {
-        popup.classList.remove("show");
-      });
-
-
-      popup.addEventListener("click", event => {
-
-        if (event.target === popup) {
-          popup.classList.remove("show");
-        }
-
-      });
-
-
-      openBoxButton.addEventListener("click", () => {
-
-        if (selectedBox === "FREE 24H") {
-
-          alert(
-            "🎁 The 24-hour free gift system will be connected to the backend."
-          );
-
-        } else {
-
-          alert(
-            selectedBox +
-            " will be connected to real TON payment and backend."
-          );
-
-        }
-
-      });
-
-    });
-
-  </script>
+<script src="app.js"></script>
 
 </body>
 </html>
