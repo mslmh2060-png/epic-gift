@@ -2,158 +2,117 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Epic Gift</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
 <div id="app">
 
-<header class="top">
-  <div class="close">× <span>Close</span></div>
-  <div class="brand">🎁 Epic Gift</div>
-  <div class="menu">⌄ ⋮</div>
+<header class="header">
+  <button class="close">× <small>Close</small></button>
+  <div class="logo">🎁 <b>Epic Gift</b></div>
+  <button class="more">⌄ ⋮</button>
 </header>
 
 <section class="balance">
+  <div class="avatar">👤</div>
 
-  <div class="profile">
-    👤
-  </div>
-
-  <div class="balance-text">
-    <small>Your balance</small>
-    <strong>🔷 0.006</strong>
+  <div class="balance-info">
+    <span>Your balance</span>
+    <b>💎 0.006</b>
   </div>
 
   <button class="deposit">▣ &nbsp; Deposit</button>
-
 </section>
 
 <section class="live">
-
-  <div class="live-title">
-    <span></span>
-    Live
+  <div class="live-label">
+    <i></i>
+    <b>Live</b>
   </div>
 
-  <div class="live-items">
+  <div class="live-list">
     <div>🧹</div>
-    <div>🔷</div>
+    <div>💎</div>
     <div>🎒</div>
     <div>🎒</div>
-    <div>🔷</div>
+    <div>💎</div>
     <div>🎁</div>
   </div>
-
 </section>
 
 <main>
 
-  <div class="banner rocket">
+<section class="hero-card rocket">
+  <div class="hero-text">
+    <label>⚡ HOT!</label>
+    <h1>🚀 ROCKET</h1>
+  </div>
+  <div class="hero-image">🚀</div>
+</section>
+
+<section class="hero-card pvp">
+  <div class="pvp-title">⚔️ <b>PVP</b></div>
+
+  <div class="pvp-users">
+    <div>DEGEN<strong>3.8%</strong></div>
+    <div>👤 MIKE_K<strong>7.6%</strong></div>
+    <div>TONNER<strong>63.0%</strong></div>
+  </div>
+</section>
+
+<section class="hero-card play">
+  <div>
+    <label>🔥 HOT</label>
+    <h1>🎮 PLAY HUB</h1>
+  </div>
+  <div class="play-games">🟢 🟣 🔵</div>
+</section>
+
+<section class="free-grid">
+  <div class="free-card gold">
+    <div>💍</div>
+    <b>FREE24</b>
+    <span>FREE REWARDS</span>
+  </div>
+
+  <div class="free-card purple">
+    <div>🍭🍄</div>
+    <b>FREE</b>
+    <span>FREE REWARDS</span>
+  </div>
+</section>
+
+<section class="contracts">
+  <h2>YOUR CONTRACTS</h2>
+
+  <div class="contract">
     <div>
-      <small>⚡ HOT!</small>
-      <h2>🚀 ROCKET</h2>
+      <b>200 POWER</b>
+      <span>Expires in 1d 0h</span>
     </div>
-    <div class="rocket-icon">🚀</div>
+    <strong>130 HASHES/day</strong>
+
+    <div class="bar"><i></i></div>
   </div>
+</section>
 
-  <div class="banner pvp">
-    <div>
-      <h2>⚔️ PVP</h2>
-    </div>
-
-    <div class="players">
-      <div>DEGEN<br><b>3.8%</b></div>
-      <div>👤 MIKE_K<br><b>7.6%</b></div>
-      <div>TONNER<br><b>63.0%</b></div>
-    </div>
-  </div>
-
-  <div class="banner play">
-    <div>
-      <small>🔥 HOT</small>
-      <h2>🎮 PLAY HUB</h2>
-    </div>
-
-    <div class="games">
-      🟢 🟣 🔵
-    </div>
-  </div>
-
-  <div class="free-grid">
-
-    <div class="free-card">
-      <div class="free-art">🪙💍</div>
-      <b>FREE24</b>
-    </div>
-
-    <div class="free-card">
-      <div class="free-art">🍭🍄</div>
-      <b>FREE</b>
-    </div>
-
-  </div>
-
-  <section class="contracts">
-
-    <h2>YOUR CONTRACTS</h2>
-
-    <div class="contract-card">
-
-      <div class="contract-row">
-        <b>200 POWER</b>
-        <span>130 HASHES/day</span>
-      </div>
-
-      <p>Expires in 1d 0h</p>
-
-      <div class="progress">
-        <i></i>
-      </div>
-
-    </div>
-
-  </section>
-
-  <section id="page" class="hidden"></section>
+<div id="page" class="hidden"></div>
 
 </main>
 
 <nav class="nav">
-
-  <button data-page="backpack">
-    📦
-    <span>BACKPACK</span>
-  </button>
-
-  <button data-page="team">
-    👥
-    <span>INVITE</span>
-  </button>
-
-  <button class="active" data-page="home">
-    🏠
-    <span>HOME</span>
-  </button>
-
-  <button data-page="trophy">
-    🏆
-    <span>LEADERBOARD</span>
-  </button>
-
-  <button data-page="earn">
-    🪙
-    <span>EARN</span>
-  </button>
-
+  <button data-page="backpack">📦<span>BACKPACK</span></button>
+  <button data-page="team">👥<span>INVITE</span></button>
+  <button class="home active" data-page="home">⌂<span>HOME</span></button>
+  <button data-page="trophy">🏆<span>LEADERBOARD</span></button>
+  <button data-page="earn">🪙<span>EARN</span></button>
 </nav>
 
 </div>
 
 <script src="app.js"></script>
-
 </body>
 </html>
