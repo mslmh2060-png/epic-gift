@@ -2,348 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <title>Epic Gift</title>
 
-  <link rel="stylesheet" href="style.css?v=7">
-
-  <style>
-    /* BOX GRID */
-
-    .box-section{
-      margin-top:4px;
-    }
-
-    .box-section-title{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      margin:4px 4px 10px;
-    }
-
-    .box-section-title strong{
-      font-size:17px;
-      font-weight:900;
-    }
-
-    .box-section-title span{
-      color:#77777f;
-      font-size:9px;
-      font-weight:700;
-    }
-
-    .box-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:11px;
-    }
-
-    .gift-box-card{
-      position:relative;
-      min-height:180px;
-      overflow:hidden;
-      border-radius:21px;
-      padding:15px;
-      border:1px solid rgba(255,255,255,.06);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.04),
-        0 8px 25px rgba(0,0,0,.22);
-      cursor:pointer;
-      transition:transform .15s ease;
-    }
-
-    .gift-box-card:active{
-      transform:scale(.97);
-    }
-
-    .box-name{
-      position:relative;
-      z-index:2;
-      font-size:18px;
-      font-weight:1000;
-    }
-
-    .box-price{
-      position:relative;
-      z-index:2;
-      display:inline-flex;
-      margin-top:7px;
-      padding:5px 8px;
-      border-radius:8px;
-      background:rgba(0,0,0,.25);
-      color:#fff;
-      font-size:10px;
-      font-weight:900;
-    }
-
-    .box-art{
-      position:absolute;
-      left:50%;
-      bottom:18px;
-      transform:translateX(-50%);
-      width:86px;
-      height:86px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:50%;
-      font-size:42px;
-      box-shadow:0 10px 30px rgba(0,0,0,.38);
-    }
-
-    .box-free{
-      background:
-        radial-gradient(circle at 50% 80%,rgba(255,174,39,.25),transparent 40%),
-        linear-gradient(145deg,#29292d,#19191b);
-    }
-
-    .box-free .box-art{
-      background:
-        radial-gradient(circle,#ffb52f 0 35%,#67391a 36% 54%,#252529 55%);
-    }
-
-    .box-farm{
-      background:
-        radial-gradient(circle at 50% 80%,rgba(52,211,111,.32),transparent 42%),
-        linear-gradient(145deg,#153e2c,#17201c);
-    }
-
-    .box-farm .box-art{
-      background:
-        radial-gradient(circle,#43dc83 0 34%,#145e3b 35% 55%,#17251e 56%);
-    }
-
-    .box-heart{
-      background:
-        radial-gradient(circle at 50% 80%,rgba(255,64,105,.34),transparent 42%),
-        linear-gradient(145deg,#431b2c,#21171c);
-    }
-
-    .box-heart .box-art{
-      background:
-        radial-gradient(circle,#ff527c 0 34%,#7a203d 35% 55%,#291820 56%);
-    }
-
-    .box-ring{
-      background:
-        radial-gradient(circle at 50% 80%,rgba(255,194,52,.32),transparent 42%),
-        linear-gradient(145deg,#493718,#201c17);
-    }
-
-    .box-ring .box-art{
-      background:
-        radial-gradient(circle,#ffd35a 0 25%,#b36b16 26% 42%,#493016 43% 57%,#29251d 58%);
-    }
-
-    .box-vip{
-      background:
-        radial-gradient(circle at 50% 80%,rgba(155,86,255,.38),transparent 43%),
-        linear-gradient(145deg,#32155f,#19151f);
-    }
-
-    .box-vip .box-art{
-      background:
-        radial-gradient(circle,#b96cff 0 34%,#5e239e 35% 55%,#281a39 56%);
-    }
-
-    .box-elite{
-      background:
-        radial-gradient(circle at 50% 80%,rgba(51,174,255,.38),transparent 43%),
-        linear-gradient(145deg,#102f55,#151b25);
-    }
-
-    .box-elite .box-art{
-      background:
-        radial-gradient(circle,#51c8ff 0 34%,#17609c 35% 55%,#172532 56%);
-    }
-
-    .box-tag{
-      position:absolute;
-      top:13px;
-      right:13px;
-      padding:5px 7px;
-      border-radius:7px;
-      background:rgba(255,255,255,.12);
-      font-size:8px;
-      font-weight:900;
-    }
-
-    @media(max-width:380px){
-
-      .box-grid{
-        gap:8px;
-      }
-
-      .gift-box-card{
-        min-height:165px;
-        padding:13px;
-      }
-
-      .box-name{
-        font-size:16px;
-      }
-
-      .box-art{
-        width:76px;
-        height:76px;
-        font-size:36px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 
 <body>
 
-<div class="app">
+  <div class="app">
 
-  <header class="topbar">
+    <!-- HEADER -->
+    <header class="topbar">
 
-    <button class="close">
-      ✕ Close
-    </button>
+      <button class="close">✕</button>
 
-    <div class="brand">
-      <div class="gift-icon">🎁</div>
-      <strong>Epic Gift</strong>
-    </div>
+      <div class="brand">
+        <div class="brand-icon">🎁</div>
+        <span>Epic Gift</span>
+      </div>
 
-    <button class="menu">
-      ⌄ Menu
-    </button>
+      <button class="menu">☰</button>
 
-  </header>
+    </header>
 
 
-  <section class="balance">
+    <!-- BALANCE -->
+    <section class="balance-section">
 
-    <div class="avatar"></div>
+      <div class="avatar">👤</div>
 
-    <div class="balance-info">
-      <span>Your balance</span>
+      <div class="balance-info">
+        <small>Your balance</small>
 
-      <strong>
-        <i>◆</i> 0.006
-      </strong>
-    </div>
+        <div class="balance-value">
+          <span class="ton-icon">◆</span>
+          <strong>0.006</strong>
+        </div>
+      </div>
 
-    <button class="deposit">
-      Deposit
-    </button>
+      <button class="deposit">Deposit</button>
 
-  </section>
-
-
-  <section class="live-section">
-
-    <div class="live-title">
-      <i></i>
-      <span>Live</span>
-    </div>
-
-    <div class="live-scroll">
-
-      <div class="live-item"></div>
-      <div class="live-item ton"></div>
-      <div class="live-item broom"></div>
-      <div class="live-item bag"></div>
-      <div class="live-item gift"></div>
-      <div class="live-item"></div>
-
-    </div>
-
-  </section>
+    </section>
 
 
-  <main>
+    <!-- LIVE -->
+    <section class="live-section">
+
+      <div class="live-title">
+        <span class="live-dot"></span>
+        <strong>Live</strong>
+      </div>
+
+      <div class="live-cards">
+        <div class="live-card">🎁</div>
+        <div class="live-card">💎</div>
+        <div class="live-card">🎟️</div>
+        <div class="live-card">💜</div>
+        <div class="live-card">🔥</div>
+      </div>
+
+    </section>
 
 
     <!-- ROCKET -->
+    <section class="rocket-banner">
 
-    <section class="banner rocket-banner">
-
-      <div class="hot">
-        🔥 HOT
+      <div class="banner-text">
+        <span class="hot">HOT</span>
+        <h2>Rocket</h2>
+        <p>Fly higher & win more</p>
       </div>
 
-      <div class="rocket-title">
-        Rocket
-      </div>
+      <div class="rocket-art">🚀</div>
 
-      <div class="rocket-art">
-
-        <div class="mult m1">
-          x2
-        </div>
-
-        <div class="mult m2">
-          x5
-        </div>
-
-        <div class="mult m3">
-          x10
-        </div>
-
-        <div class="rocket-body">
-          🚀
-        </div>
-
+      <div class="multipliers">
+        <span>1.2x</span>
+        <span>2x</span>
+        <span>5x</span>
       </div>
 
     </section>
 
 
     <!-- PVP -->
-
-    <section class="banner pvp-banner">
+    <section class="pvp-banner">
 
       <div class="pvp-title">
-        ⚔ PVP
+        <span>⚔️</span>
+        <div>
+          <strong>PVP</strong>
+          <small>Fight other players</small>
+        </div>
       </div>
 
       <div class="players">
 
-        <div class="player active-player">
-
-          <div class="player-img"></div>
-
-          <b>
-            Player 1
-          </b>
-
-          <span>
-            52%
-          </span>
-
+        <div class="player-card">
+          <div class="player-avatar">😎</div>
+          <b>72%</b>
         </div>
 
+        <div class="vs">VS</div>
 
-        <div class="player">
-
-          <div class="player-img two"></div>
-
-          <b>
-            Player 2
-          </b>
-
-          <span>
-            31%
-          </span>
-
-        </div>
-
-
-        <div class="player">
-
-          <div class="player-img three"></div>
-
-          <b>
-            Player 3
-          </b>
-
-          <span>
-            17%
-          </span>
-
+        <div class="player-card">
+          <div class="player-avatar">👹</div>
+          <b>28%</b>
         </div>
 
       </div>
@@ -352,465 +117,461 @@
 
 
     <!-- PLAY HUB -->
+    <section class="play-banner">
 
-    <section class="banner play-banner">
+      <div>
+        <span class="play-icon">🎮</span>
 
-      <div class="hot">
-        PLAY
+        <div>
+          <h2>Play Hub</h2>
+          <p>Play games & earn rewards</p>
+        </div>
       </div>
 
-      <div class="play-title">
-        Play Hub
-      </div>
-
-      <div class="games">
-
-        <div class="game green">
-          ♟
-        </div>
-
-        <div class="game purple">
-          ★
-        </div>
-
-        <div class="game blue">
-          ⚡
-        </div>
-
-      </div>
+      <span class="arrow">›</span>
 
     </section>
 
 
     <!-- BOXES -->
+    <section class="boxes-section">
 
-    <section class="box-section">
-
-      <div class="box-section-title">
-
-        <strong>
-          Gift Boxes
-        </strong>
-
-        <span>
-          Open & Win
-        </span>
-
+      <div class="section-title">
+        <h2>Gift Boxes</h2>
+        <span>🎁</span>
       </div>
 
 
-      <div class="box-grid">
+      <div class="gift-box-grid">
 
 
         <!-- FREE 24H -->
-
         <div
-          class="gift-box-card box-free"
+          class="gift-box-card free24"
           data-box="FREE 24H"
           data-price="FREE"
         >
 
-          <div class="box-name">
-            FREE <span style="color:#ffb52f">24H</span>
-          </div>
+          <div class="box-badge">FREE</div>
 
-          <div class="box-price">
-            FREE
-          </div>
-
-          <div class="box-art">
+          <div
+            class="box-art"
+            style="
+              position:absolute;
+              left:50%;
+              bottom:18px;
+              transform:translateX(-50%);
+              font-size:70px;
+            "
+          >
             🎁
           </div>
 
-          <div class="box-tag">
-            DAILY
+          <div class="box-info">
+            <strong>FREE 24H</strong>
+            <span>Every 24 hours</span>
           </div>
 
         </div>
 
 
         <!-- FARM -->
-
         <div
-          class="gift-box-card box-farm"
-          data-box="FARM BOX"
+          class="gift-box-card"
+          data-box="FARM"
           data-price="0.1 TON"
         >
 
-          <div class="box-name">
-            FARM
-          </div>
+          <div class="box-badge">0.1 TON</div>
 
-          <div class="box-price">
-            ◆ 0.1 TON
-          </div>
-
-          <div class="box-art">
+          <div
+            class="box-art"
+            style="
+              position:absolute;
+              left:50%;
+              bottom:18px;
+              transform:translateX(-50%);
+              font-size:70px;
+            "
+          >
             🌾
           </div>
 
-          <div class="box-tag">
-            FARM
+          <div class="box-info">
+            <strong>FARM</strong>
+            <span>0.1 TON</span>
           </div>
 
         </div>
 
 
         <!-- HEART -->
-
         <div
-          class="gift-box-card box-heart"
-          data-box="HEART BOX"
+          class="gift-box-card"
+          data-box="HEART"
           data-price="1 TON"
         >
 
-          <div class="box-name">
-            HEART
-          </div>
+          <div class="box-badge">1 TON</div>
 
-          <div class="box-price">
-            ◆ 1 TON
-          </div>
-
-          <div class="box-art">
+          <div
+            class="box-art"
+            style="
+              position:absolute;
+              left:50%;
+              bottom:18px;
+              transform:translateX(-50%);
+              font-size:70px;
+            "
+          >
             ❤️
           </div>
 
-          <div class="box-tag">
-            BOX
+          <div class="box-info">
+            <strong>HEART</strong>
+            <span>1 TON</span>
           </div>
 
         </div>
 
 
         <!-- RING -->
-
         <div
-          class="gift-box-card box-ring"
-          data-box="RING BOX"
+          class="gift-box-card"
+          data-box="RING"
           data-price="TON"
         >
 
-          <div class="box-name">
-            RING
-          </div>
+          <div class="box-badge">TON</div>
 
-          <div class="box-price">
-            ◆ TON
-          </div>
-
-          <div class="box-art">
+          <div
+            class="box-art"
+            style="
+              position:absolute;
+              left:50%;
+              bottom:18px;
+              transform:translateX(-50%);
+              font-size:70px;
+            "
+          >
             💍
           </div>
 
-          <div class="box-tag">
-            BOX
+          <div class="box-info">
+            <strong>RING</strong>
+            <span>Epic Gift</span>
           </div>
 
         </div>
 
 
         <!-- VIP -->
-
         <div
-          class="gift-box-card box-vip"
-          data-box="VIP BOX"
+          class="gift-box-card"
+          data-box="VIP"
           data-price="100 TON"
         >
 
-          <div class="box-name">
-            VIP
-          </div>
+          <div class="box-badge">100 TON</div>
 
-          <div class="box-price">
-            ◆ 100 TON
-          </div>
-
-          <div class="box-art">
+          <div
+            class="box-art"
+            style="
+              position:absolute;
+              left:50%;
+              bottom:18px;
+              transform:translateX(-50%);
+              font-size:70px;
+            "
+          >
             👑
           </div>
 
-          <div class="box-tag">
-            VIP
+          <div class="box-info">
+            <strong>VIP</strong>
+            <span>100 TON</span>
           </div>
 
         </div>
 
 
         <!-- ELITE -->
-
         <div
-          class="gift-box-card box-elite"
-          data-box="ELITE BOX"
+          class="gift-box-card"
+          data-box="ELITE"
           data-price="250 TON"
         >
 
-          <div class="box-name">
-            ELITE
-          </div>
+          <div class="box-badge">250 TON</div>
 
-          <div class="box-price">
-            ◆ 250 TON
-          </div>
-
-          <div class="box-art">
+          <div
+            class="box-art"
+            style="
+              position:absolute;
+              left:50%;
+              bottom:18px;
+              transform:translateX(-50%);
+              font-size:70px;
+            "
+          >
             💎
           </div>
 
-          <div class="box-tag">
-            ELITE
+          <div class="box-info">
+            <strong>ELITE</strong>
+            <span>250 TON</span>
           </div>
 
         </div>
-
 
       </div>
 
     </section>
 
 
-  </main>
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
 
-</div>
+      <button>
+        <span>🎒</span>
+        <small>Backpack</small>
+      </button>
+
+      <button>
+        <span>👥</span>
+        <small>Invite</small>
+      </button>
+
+      <button class="active">
+        <span>🏠</span>
+        <small>Home</small>
+      </button>
+
+      <button>
+        <span>🏆</span>
+        <small>Leaderboard</small>
+      </button>
+
+      <button>
+        <span>⚡</span>
+        <small>Earn</small>
+      </button>
+
+    </nav>
+
+  </div>
 
 
-<!-- BOTTOM NAV -->
+  <!-- BOX POPUP -->
+  <div
+    id="boxPopup"
+    style="
+      display:none;
+      position:fixed;
+      inset:0;
+      z-index:999;
+      background:rgba(0,0,0,.75);
+      align-items:flex-end;
+      justify-content:center;
+      padding:12px;
+    "
+  >
 
-<nav class="bottom-nav">
+    <div
+      style="
+        width:100%;
+        max-width:520px;
+        background:#222224;
+        border-radius:24px;
+        padding:20px;
+        color:white;
+        box-shadow:0 20px 60px rgba(0,0,0,.6);
+      "
+    >
 
-  <button>
+      <div
+        style="
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+          margin-bottom:18px;
+        "
+      >
 
-    <div>
-      🎒
+        <strong
+          id="popupTitle"
+          style="font-size:20px;"
+        >
+          Gift Box
+        </strong>
+
+        <button
+          id="popupClose"
+          style="
+            border:0;
+            background:#333338;
+            color:white;
+            width:36px;
+            height:36px;
+            border-radius:12px;
+            font-size:18px;
+          "
+        >
+          ✕
+        </button>
+
+      </div>
+
+
+      <div
+        id="popupContent"
+        style="
+          text-align:center;
+          padding:10px 0;
+        "
+      >
+
+        <div
+          id="popupEmoji"
+          style="
+            font-size:80px;
+            margin-bottom:12px;
+          "
+        >
+          🎁
+        </div>
+
+        <p
+          id="popupPrice"
+          style="
+            color:#aaa;
+            margin:8px 0 18px;
+          "
+        >
+          Gift Box
+        </p>
+
+        <button
+          id="openBoxButton"
+          style="
+            width:100%;
+            border:0;
+            border-radius:14px;
+            padding:15px;
+            background:#8b5cf6;
+            color:white;
+            font-size:16px;
+            font-weight:bold;
+          "
+        >
+          OPEN BOX
+        </button>
+
+      </div>
+
     </div>
 
-    <span>
-      Backpack
-    </span>
-
-  </button>
+  </div>
 
 
-  <button>
-
-    <div>
-      👥
-    </div>
-
-    <span>
-      Invite
-    </span>
-
-  </button>
+  <script src="app.js?v=2"></script>
 
 
-  <button class="active">
+  <!-- BOX SCRIPT -->
+  <script>
 
-    <div>
-      ⌂
-    </div>
+    document.addEventListener("DOMContentLoaded", () => {
 
-    <span>
-      Home
-    </span>
+      const popup = document.getElementById("boxPopup");
+      const popupTitle = document.getElementById("popupTitle");
+      const popupPrice = document.getElementById("popupPrice");
+      const popupEmoji = document.getElementById("popupEmoji");
+      const close = document.getElementById("popupClose");
+      const openButton = document.getElementById("openBoxButton");
 
-  </button>
+      let selectedBox = "";
 
-
-  <button>
-
-    <div>
-      🏆
-    </div>
-
-    <span>
-      Leaderboard
-    </span>
-
-  </button>
+      const emojis = {
+        "FREE 24H": "🎁",
+        "FARM": "🌾",
+        "HEART": "❤️",
+        "RING": "💍",
+        "VIP": "👑",
+        "ELITE": "💎"
+      };
 
 
-  <button>
+      document
+        .querySelectorAll(".gift-box-card")
+        .forEach((card) => {
 
-    <div>
-      ⚡
-    </div>
+          card.addEventListener("click", () => {
 
-    <span>
-      Earn
-    </span>
+            selectedBox =
+              card.dataset.box || "Gift Box";
 
-  </button>
+            const price =
+              card.dataset.price || "";
 
-</nav>
+            popupTitle.textContent =
+              selectedBox;
+
+            popupPrice.textContent =
+              price === "FREE"
+                ? "Free reward — once every 24 hours"
+                : "Price: " + price;
+
+            popupEmoji.textContent =
+              emojis[selectedBox] || "🎁";
+
+            openButton.textContent =
+              price === "FREE"
+                ? "CLAIM FREE GIFT"
+                : "OPEN BOX";
+
+            popup.style.display = "flex";
+
+          });
+
+        });
 
 
-<script src="app.js?v=2"></script>
+      close.addEventListener("click", () => {
+        popup.style.display = "none";
+      });
 
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
+      popup.addEventListener("click", (event) => {
 
-    document.querySelectorAll(".gift-box-card").forEach(card => {
-
-      card.addEventListener("click", () => {
-
-        const box = card.dataset.box;
-        const price = card.dataset.price;
-
-        const old = document.querySelector(".epic-box-popup");
-
-        if (old) {
-          old.remove();
+        if (event.target === popup) {
+          popup.style.display = "none";
         }
 
-        const popup = document.createElement("div");
+      });
 
-        popup.className = "epic-box-popup";
 
-        popup.innerHTML = `
-          <div class="epic-box-popup-inner">
+      openButton.addEventListener("click", () => {
 
-            <button class="epic-box-close">
-              ✕
-            </button>
-
-            <div class="epic-box-popup-icon">
-              🎁
-            </div>
-
-            <h2>
-              ${box}
-            </h2>
-
-            <div class="epic-box-popup-price">
-              ${price}
-            </div>
-
-            <p>
-              Open this box and discover your possible Gift reward.
-            </p>
-
-            <button class="epic-box-open">
-              OPEN BOX
-            </button>
-
-          </div>
-        `;
-
-        Object.assign(popup.style, {
-          position:"fixed",
-          inset:"0",
-          zIndex:"200",
-          background:"rgba(0,0,0,.76)",
-          display:"flex",
-          alignItems:"flex-end",
-          justifyContent:"center",
-          padding:"10px",
-          backdropFilter:"blur(5px)"
-        });
-
-        const inner = popup.querySelector(
-          ".epic-box-popup-inner"
-        );
-
-        Object.assign(inner.style, {
-          width:"100%",
-          maxWidth:"520px",
-          background:"#222224",
-          border:"1px solid rgba(255,255,255,.07)",
-          borderRadius:"24px",
-          padding:"22px",
-          textAlign:"center",
-          boxShadow:"0 20px 60px rgba(0,0,0,.6)"
-        });
-
-        const close = popup.querySelector(
-          ".epic-box-close"
-        );
-
-        Object.assign(close.style, {
-          position:"absolute",
-          right:"22px",
-          marginTop:"-5px",
-          width:"38px",
-          height:"38px",
-          border:"0",
-          borderRadius:"11px",
-          background:"#303034",
-          color:"#fff",
-          fontSize:"18px"
-        });
-
-        Object.assign(
-          popup.querySelector(".epic-box-popup-icon").style,
-          {
-            width:"80px",
-            height:"80px",
-            margin:"5px auto 12px",
-            display:"flex",
-            alignItems:"center",
-            justifyContent:"center",
-            borderRadius:"50%",
-            background:"linear-gradient(145deg,#8b4dff,#5520b9)",
-            fontSize:"38px",
-            boxShadow:"0 10px 30px rgba(110,55,230,.35)"
-          }
-        );
-
-        Object.assign(
-          popup.querySelector(".epic-box-popup-price").style,
-          {
-            display:"inline-block",
-            padding:"7px 12px",
-            borderRadius:"10px",
-            background:"#303034",
-            color:"#fff",
-            fontWeight:"900",
-            fontSize:"13px"
-          }
-        );
-
-        Object.assign(
-          popup.querySelector(".epic-box-open").style,
-          {
-            width:"100%",
-            padding:"14px",
-            border:"0",
-            borderRadius:"14px",
-            background:"linear-gradient(145deg,#8148f5,#6932d8)",
-            color:"#fff",
-            fontWeight:"900",
-            fontSize:"13px",
-            marginTop:"10px"
-          }
-        );
-
-        close.onclick = () => popup.remove();
-
-        popup.onclick = e => {
-          if (e.target === popup) {
-            popup.remove();
-          }
-        };
-
-        popup.querySelector(".epic-box-open").onclick = () => {
+        if (selectedBox === "FREE 24H") {
 
           alert(
-            box +
-            " — opening and real TON rewards will be connected after the wallet/backend is added."
+            "🎁 Your 24-hour free gift will be connected to the real reward system in the next step."
           );
 
-        };
+        } else {
 
-        document.body.appendChild(popup);
+          alert(
+            selectedBox +
+            " will be connected to real TON payment and backend in the next step."
+          );
+
+        }
 
       });
 
     });
 
-  });
-</script>
+  </script>
 
 </body>
 </html>
