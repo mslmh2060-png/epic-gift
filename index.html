@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Epic Gift</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+<main id="app">
+<header class="top"><div class="brand">⚡ Epic Gift</div><div>🇬🇧</div></header>
+<section class="hero"><div class="bolt">⚡</div><div class="label">HASHES MINED</div><div id="hashes" class="big">0.00000000</div><div class="muted">≈ 0.00000000 GRAM at current rate</div></section>
+<section class="stats"><div><b>130</b><span>HASHES/day</span></div><div><b id="power">200</b><span>POWER</span></div><div><b>1d 0h</b><span>next expiry</span></div></section>
+<h2>YOUR CONTRACTS</h2>
+<section class="card"><div class="row"><b>200 POWER</b><span>130 HASHES/day</span></div><div class="muted">Expires in 1d 0h</div><div class="progress"><i></i></div><div class="muted">0%</div></section>
+<button class="primary" id="swap">SWAP HASHES → GRAM</button>
+<div class="two"><button>Buy POWER</button><button id="freePower">Free POWER</button></div>
+<section id="page" class="card hidden"></section>
+</main>
+<nav class="nav">
+<button data-page="home">⌂<span>HOME</span></button><button data-page="shop">🛒<span>SHOP</span></button><button data-page="trophy">🏆<span>TROPHY</span></button><button data-page="team">👥<span>TEAM</span></button><button data-page="earn">✓<span>EARN</span></button><button data-page="more">☰<span>MORE</span></button><button data-page="payout">💸<span>PAYOUTS</span></button>
+</nav>
+<script src="app.js"></script>
+</body>
+</html>
