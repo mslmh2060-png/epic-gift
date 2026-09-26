@@ -1,509 +1,261 @@
-*{
-  box-sizing:border-box;
-}
-
-html,body{
-  margin:0;
-  padding:0;
-  width:100%;
-  min-height:100%;
-  background:#171719;
-  color:#fff;
-  font-family:Arial,Helvetica,sans-serif;
-}
-
-body{
-  overflow-x:hidden;
-}
-
-button{
-  border:0;
-  font:inherit;
-  color:inherit;
-  cursor:pointer;
-}
-
-.app{
-  width:100%;
-  max-width:520px;
-  min-height:100vh;
-  margin:0 auto;
-  padding:0 12px 86px;
-  background:#171719;
-}
-
-/* HEADER */
-
-.topbar{
-  height:62px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:8px;
-}
-
-.close,
-.menu{
-  background:#242426;
-  border-radius:13px;
-  padding:9px 13px;
-  font-size:13px;
-  font-weight:700;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.035);
-}
-
-.close{
-  color:#ddd;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:7px;
-  font-size:17px;
-  letter-spacing:-.3px;
-}
-
-.gift-icon{
-  width:25px;
-  height:25px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:8px;
-  background:#7c42ff;
-  color:#fff;
-  font-size:18px;
-  box-shadow:0 4px 14px rgba(124,66,255,.25);
-}
-
-/* BALANCE */
-
-.balance{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  min-height:64px;
-  padding:7px 8px;
-  background:#202022;
-  border-radius:17px;
-}
-
-.avatar{
-  width:42px;
-  height:42px;
-  flex:none;
-  border-radius:50%;
-  background:
-    radial-gradient(circle at 50% 35%,#d8c6ff 0 17%,transparent 18%),
-    radial-gradient(circle at 50% 72%,#9b65ff 0 28%,transparent 29%),
-    #36205d;
-  border:2px solid #874cff;
-}
-
-.balance-info{
-  min-width:0;
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  gap:3px;
-}
-
-.balance-info span{
-  color:#8f8f96;
-  font-size:10px;
-  font-weight:600;
-}
-
-.balance-info strong{
-  font-size:15px;
-  line-height:1;
-}
-
-.balance-info strong i{
-  color:#39a9ff;
-  font-style:normal;
-}
-
-.deposit{
-  background:#7540ed;
-  border-radius:11px;
-  padding:10px 12px;
-  font-size:11px;
-  font-weight:800;
-  white-space:nowrap;
-}
-
-/* LIVE */
-
-.live-section{
-  margin-top:12px;
-}
-
-.live-title{
-  display:flex;
-  align-items:center;
-  gap:6px;
-  margin:0 0 7px 3px;
-  font-size:11px;
-  color:#aaaab0;
-}
-
-.live-title i{
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:#46df79;
-  box-shadow:0 0 8px rgba(70,223,121,.55);
-}
-
-.live-scroll{
-  display:flex;
-  gap:7px;
-  overflow:hidden;
-}
-
-.live-item{
-  width:53px;
-  height:43px;
-  flex:none;
-  border-radius:11px;
-  position:relative;
-  overflow:hidden;
-  background:#27272a;
-  border:1px solid rgba(255,255,255,.05);
-}
-
-.live-item::after{
-  content:"";
-  position:absolute;
-  width:25px;
-  height:25px;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  border-radius:8px;
-  background:linear-gradient(135deg,#7744ff,#bd78ff);
-}
-
-.live-item.ton::after{
-  background:linear-gradient(135deg,#179cf4,#62d3ff);
-  border-radius:50%;
-}
-
-.live-item.broom::after{
-  background:linear-gradient(135deg,#ffbd38,#ff5b62);
-}
-
-.live-item.bag::after{
-  background:linear-gradient(135deg,#7b55ff,#3920b4);
-}
-
-.live-item.gift::after{
-  background:linear-gradient(135deg,#ff4d9d,#744cff);
-}
-
-/* BANNERS */
-
-main{
-  margin-top:12px;
-}
-
-.banner{
-  position:relative;
-  overflow:hidden;
-  min-height:132px;
-  margin-bottom:10px;
-  border-radius:19px;
-  padding:13px;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);
-}
-
-.hot{
-  display:inline-flex;
-  align-items:center;
-  padding:5px 8px;
-  border-radius:8px;
-  background:rgba(255,255,255,.14);
-  font-size:9px;
-  font-weight:900;
-  letter-spacing:.2px;
-}
-
-.rocket-banner{
-  background:
-    radial-gradient(circle at 82% 45%,rgba(88,191,255,.45),transparent 30%),
-    linear-gradient(135deg,#174a9d,#1371d1);
-}
-
-.rocket-title{
-  margin-top:8px;
-  font-size:18px;
-  font-weight:900;
-}
-
-.rocket-art{
-  position:absolute;
-  right:28px;
-  top:24px;
-  width:125px;
-  height:105px;
-}
-
-.rocket-body{
-  position:absolute;
-  left:42px;
-  top:27px;
-  width:46px;
-  height:70px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transform:rotate(25deg);
-  border-radius:50% 50% 45% 45%;
-  background:linear-gradient(145deg,#fff,#b9d8ff);
-  color:#1675d5;
-  font-size:25px;
-  box-shadow:0 8px 25px rgba(0,0,0,.25);
-}
-
-.mult{
-  position:absolute;
-  padding:4px 6px;
-  border-radius:6px;
-  background:rgba(5,30,70,.5);
-  font-size:8px;
-  font-weight:900;
-}
-
-.m1{right:0;top:8px}
-.m2{right:4px;top:43px}
-.m3{left:0;top:60px}
-
-/* PVP */
-
-.pvp-banner{
-  min-height:139px;
-  background:
-    radial-gradient(circle at 50% 20%,rgba(255,255,255,.2),transparent 35%),
-    linear-gradient(135deg,#f4c928,#e99716);
-  color:#17120a;
-}
-
-.pvp-title{
-  font-size:18px;
-  font-weight:1000;
-  margin-bottom:9px;
-}
-
-.players{
-  display:flex;
-  justify-content:space-between;
-  gap:7px;
-}
-
-.player{
-  flex:1;
-  min-width:0;
-  padding:6px 4px 7px;
-  border-radius:12px;
-  text-align:center;
-  background:rgba(255,255,255,.22);
-}
-
-.active-player{
-  background:rgba(255,255,255,.38);
-  box-shadow:0 0 0 2px rgba(255,255,255,.25);
-}
-
-.player-img{
-  width:38px;
-  height:38px;
-  margin:0 auto 4px;
-  border-radius:50%;
-  background:linear-gradient(145deg,#5d3b22,#e5ad6b);
-  border:2px solid rgba(0,0,0,.25);
-}
-
-.player-img.two{
-  background:linear-gradient(145deg,#342c26,#c89c72);
-}
-
-.player-img.three{
-  background:linear-gradient(145deg,#263d54,#75b8e8);
-}
-
-.player b{
-  display:block;
-  font-size:8px;
-}
-
-.player span{
-  display:block;
-  margin-top:2px;
-  font-size:8px;
-  font-weight:900;
-}
-
-/* PLAY HUB */
-
-.play-banner{
-  min-height:124px;
-  background:
-    radial-gradient(circle at 80% 45%,rgba(221,117,255,.45),transparent 35%),
-    linear-gradient(135deg,#6320b9,#9d39df);
-}
-
-.play-title{
-  margin-top:8px;
-  font-size:17px;
-  font-weight:900;
-}
-
-.games{
-  position:absolute;
-  right:13px;
-  bottom:13px;
-  display:flex;
-  gap:7px;
-}
-
-.game{
-  width:45px;
-  height:45px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:12px;
-  color:#fff;
-  font-size:19px;
-  font-weight:900;
-  background:rgba(0,0,0,.22);
-}
-
-.game.green{background:#31b96b}
-.game.purple{background:#7132bd}
-.game.blue{background:#267cd7}
-
-/* FREE */
-
-.free-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-
-.free-card{
-  position:relative;
-  min-height:155px;
-  overflow:hidden;
-  border-radius:19px;
-  padding:14px;
-  background:#242426;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);
-}
-
-.free24{
-  background:
-    radial-gradient(circle at 50% 75%,rgba(255,184,53,.3),transparent 35%),
-    linear-gradient(145deg,#28282b,#1d1d1f);
-}
-
-.free{
-  background:
-    radial-gradient(circle at 50% 75%,rgba(124,66,255,.4),transparent 35%),
-    linear-gradient(145deg,#29272f,#1d1d1f);
-}
-
-.free-title{
-  font-size:18px;
-  font-weight:1000;
-}
-
-.free-title span{
-  color:#ffb62e;
-}
-
-.ring,
-.free-art{
-  position:absolute;
-  left:50%;
-  bottom:17px;
-  transform:translateX(-50%);
-  width:72px;
-  height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:radial-gradient(circle,#ffca4d 0 18%,#ff8b24 19% 35%,#55391c 36% 52%,#252529 53%);
-  color:#fff;
-  font-size:24px;
-  box-shadow:0 8px 25px rgba(0,0,0,.35);
-}
-
-.free-art{
-  background:radial-gradient(circle,#bf8aff 0 17%,#7741e5 18% 40%,#322057 41% 60%,#252529 61%);
-}
-
-/* BOTTOM NAV */
-
-.bottom-nav{
-  position:fixed;
-  z-index:20;
-  left:50%;
-  bottom:8px;
-  transform:translateX(-50%);
-  width:calc(100% - 20px);
-  max-width:496px;
-  height:65px;
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  padding:5px;
-  border-radius:18px;
-  background:#222224;
-  box-shadow:0 8px 30px rgba(0,0,0,.45);
-}
-
-.bottom-nav button{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:3px;
-  background:transparent;
-  border-radius:13px;
-  color:#77777e;
-  font-size:8px;
-  font-weight:700;
-}
-
-.bottom-nav button div{
-  font-size:18px;
-  line-height:18px;
-}
-
-.bottom-nav button.active{
-  color:#fff;
-  background:#7040d9;
-  box-shadow:0 4px 12px rgba(112,64,217,.3);
-}
-
-@media(max-width:360px){
-  .app{
-    padding-left:9px;
-    padding-right:9px;
-  }
-
-  .deposit{
-    padding:9px 9px;
-  }
-
-  .rocket-art{
-    right:14px;
-  }
-
-  .bottom-nav{
-    width:calc(100% - 14px);
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"
+  >
+
+  <title>Epic Gift</title>
+
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- HEADER -->
+  <header class="topbar">
+
+    <button class="close" type="button">
+      × Close
+    </button>
+
+    <div class="brand">
+      <div class="gift-icon">♧</div>
+      <b>Epic Gift</b>
+    </div>
+
+    <button class="menu" type="button">
+     ⌄ &nbsp;⋮
+    </button>
+
+  </header>
+
+
+  <!-- BALANCE -->
+  <section class="balance">
+
+    <div class="avatar"></div>
+
+    <div class="balance-info">
+      <span>Your balance</span>
+
+      <strong>
+        <i>◇</i> 0.006
+      </strong>
+    </div>
+
+    <button class="deposit" type="button">
+      <span>▣</span> Deposit
+    </button>
+
+  </section>
+
+
+  <!-- LIVE -->
+  <section class="live-section">
+
+    <div class="live-title">
+      <i></i>
+      <b>Live</b>
+    </div>
+
+    <div class="live-scroll">
+
+      <div class="live-item broom"></div>
+      <div class="live-item ton"></div>
+      <div class="live-item bag"></div>
+      <div class="live-item bag"></div>
+      <div class="live-item ton"></div>
+      <div class="live-item gift"></div>
+
+    </div>
+
+  </section>
+
+
+  <main>
+
+    <!-- ROCKET -->
+    <section class="banner rocket-banner">
+
+      <div class="hot">
+        ϟ HOT!
+      </div>
+
+      <div class="rocket-title">
+        ♧ ROCKET
+      </div>
+
+      <div class="rocket-art">
+
+        <div class="rocket-body">
+          ◈
+        </div>
+
+        <span class="mult m1">
+          x4.97
+        </span>
+
+        <span class="mult m2">
+          x3.08
+        </span>
+
+        <span class="mult m3">
+          x1.74
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- PVP -->
+    <section class="banner pvp-banner">
+
+      <div class="pvp-title">
+        ⚔ PVP
+      </div>
+
+      <div class="players">
+
+        <div class="player">
+
+          <div class="player-img one"></div>
+
+          <b>DEGEN</b>
+
+          <span>3.8%</span>
+
+        </div>
+
+
+        <div class="player active-player">
+
+          <div class="player-img two"></div>
+
+          <b>MIKE_K</b>
+
+          <span>7.6%</span>
+
+        </div>
+
+
+        <div class="player">
+
+          <div class="player-img three"></div>
+
+          <b>TONNER</b>
+
+          <span>63.0%</span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PLAY HUB -->
+    <section class="banner play-banner">
+
+      <div class="hot">
+        ♨ HOT
+      </div>
+
+      <div class="play-title">
+        ⌁ PLAY HUB
+      </div>
+
+      <div class="games">
+
+        <div class="game green">
+          ↗
+        </div>
+
+        <div class="game purple">
+          •••
+        </div>
+
+        <div class="game blue">
+          ▦
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FREE CARDS -->
+    <section class="free-grid">
+
+      <div class="free-card free24">
+
+        <div class="free-title">
+          FREE<span>24</span>
+        </div>
+
+        <div class="ring">
+          ◉
+        </div>
+
+      </div>
+
+
+      <div class="free-card free">
+
+        <div class="free-title">
+          FREE
+        </div>
+
+        <div class="free-art">
+          ●
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+
+    <button type="button">
+      <div>◇</div>
+      <span>Backpack</span>
+    </button>
+
+    <button type="button">
+      <div>♙</div>
+      <span>Invite</span>
+    </button>
+
+    <button type="button" class="active">
+      <div>⌂</div>
+      <span>Home</span>
+    </button>
+
+    <button type="button">
+      <div>♜</div>
+      <span>Leaderboard</span>
+    </button>
+
+    <button type="button">
+      <div>◉</div>
+      <span>Earn</span>
+    </button>
+
+  </nav>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
